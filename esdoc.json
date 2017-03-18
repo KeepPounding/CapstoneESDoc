@@ -1,0 +1,5 @@
+{
+	"source" : "../React_Redux",
+	"destination" : "./docs",
+	"includes" : ["\\.(jsx|es6)$"]
+}

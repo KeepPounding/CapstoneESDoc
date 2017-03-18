@@ -1,0 +1,20 @@
+{
+	"name": "Documentor",
+	"version": "0.0.1",
+	"description": "Build documentation from react and redux app/",
+	"main": "index.jsx",
+	"scripts": {
+		"lint": "eslint app",
+		"doc": "esdoc -c esdoc.json",
+		"postinstall" : "npm run build && npm run doc"
+	},
+	"author": "Matthew Cook",
+	"license": "ISC",
+	"dependencies": {
+	},
+	"devDependencies": {
+		"eslint" : "^3.17.1",
+		"doc" : "^0.0.3",
+		"esdoc" : "^2.15.0"
+	}
+}

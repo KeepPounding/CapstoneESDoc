@@ -1,0 +1,4961 @@
+[
+  {
+    "__docId__": 0,
+    "kind": "file",
+    "name": "React_Redux/actions.jsx",
+    "content": "import * as CONSTANTS from './constants'\r\nimport thunk from 'redux-thunk'\r\n\r\n/********************* Graph CRUD ***********************/\r\nexport const createGraph = (sessionId, reportId, graphId) => {\r\n  \treturn {\r\n\t\ttype      : CONSTANTS.CREATE_GRAPH,\r\n\t\tsessionId : sessionId,\r\n\t\tgraphId   : graphId,\r\n\t\treportId  : reportId\r\n  \t}\r\n}\r\n\r\nexport const updateGraph = (sessionId, id, reportId, graphId) => {\r\n  \treturn {\r\n\t\ttype      : CONSTANTS.UPDATE_GRAPH,\r\n\t\tsessionId : sessionId,\r\n\t\tid        : id,\r\n\t\treportId  : reportId,\r\n\t\tgraphId   : graphId\r\n  \t}\r\n}\r\n\r\nexport const updateGraphId = (event) => {\r\n  \treturn {\r\n\t\ttype  : CONSTANTS.UPDATE_GRAPH_PREVIEW,\r\n\t\tname  : CONSTANTS.GRAPH,\r\n\t\tvalue : event.target.value\r\n  \t}\r\n}\r\n\r\nexport const updateReportId = (event) => {\r\n  \treturn {\r\n\t\ttype  : CONSTANTS.UPDATE_REPORT_PREVIEW,\r\n\t\tname  : CONSTANTS.REPORT,\r\n\t\tvalue : event.target.value\r\n  \t}\r\n}\r\n\r\nexport const deleteGraph = (sessionId, graphId) => {\r\n  \treturn {\r\n\t\ttype       : CONSTANTS.DELETE_GRAPH,\r\n\t\tsessionId  : sessionId,\r\n\t\tparams     : {\r\n\t\t\tid : graphId\r\n\t\t}\r\n  \t}\r\n}\r\n\r\nexport const editGraph = (graph, report) => {\r\n  \treturn {\r\n\t\ttype   : CONSTANTS.EDIT_GRAPH,\r\n\t\tgraph  : graph,\r\n\t\treport : report\r\n  \t}\r\n}\r\n/********************************************************/\r\n\r\n/********************* ForceRG Manager ***********************/\r\nexport const retrieveGraphs = (sessionId) => {\r\n  \treturn {\r\n\t\ttype       : CONSTANTS.LOAD_GRAPHS,\r\n\t\tsessionId  : sessionId,\r\n\t\tparams     : { \r\n\t\t\taction : CONSTANTS.PARAM_VALUE_RETRIEVE_GRAPHS\r\n\t\t}\r\n  \t}\r\n}\r\n\r\nexport const retrieveGraphTypes = (sessionId) => {\r\n  \treturn {\r\n\t\ttype       : CONSTANTS.LOAD_GRAPH_TYPES,\r\n\t\tsessionId  : sessionId,\r\n\t\tparams     : { \r\n\t\t\taction : CONSTANTS.PARAM_VALUE_GRAPHTYPE\r\n\t\t}\r\n  \t}\r\n}\r\n\r\nexport const retrieveReports = (sessionId) => {\r\n  \treturn {\r\n\t\ttype      : CONSTANTS.LOAD_REPORTS,\r\n\t\tsessionId : sessionId\r\n  \t}\r\n}\r\n\r\nexport const refreshGraph = (sessionId, id) => {\r\n  \treturn {\r\n\t\ttype   \t   : CONSTANTS.REFRESH_GRAPH,\r\n\t\tsessionId  : sessionId,\r\n\t\tparams     : {\r\n\t\t\taction : CONSTANTS.PARAM_VALUE_RETRIEVE_GRAPH,\r\n\t\t\tid \t   : id\r\n\t\t}\r\n  \t}\r\n}\r\n\r\nexport const refreshDashboard = () => {\r\n\treturn {\r\n\t\ttype : CONSTANTS.LOAD_GRAPHS\r\n  \t}\r\n}\r\n\r\nexport const cancelEditing = () => {\r\n  \treturn {\r\n\t\ttype : CONSTANTS.CANCEL_EDITING\r\n  \t}\r\n}\r\n/********************************************************/\r\n\r\n/********************* Report API ***********************/\r\nexport const retrieveReportMetaData = (sessionId, reportId) => {\r\n\treturn {\r\n\t\ttype      : CONSTANTS.RETRIEVE_REPORT_METADATA,\r\n\t\tsessionId : sessionId,\r\n\t\treportId  : reportId\r\n\t}\r\n}\r\n\r\nexport const retrieveReportData = (sessionId, reportId, metadata) => {\r\n\treturn {\r\n\t\ttype      : CONSTANTS.RETRIEVE_REPORT_DATA,\r\n\t\tsessionId : sessionId,\r\n\t\treportId  : reportId,\r\n\t\tmetadata  : metadata\r\n\t}\r\n}\r\n/********************************************************/\r\n\r\n/*********************** MISC ***************************/\r\nexport const newGraph = () => {\r\n\treturn {\r\n\t\ttype : CONSTANTS.NEW_GRAPH\r\n\t}\r\n}\r\n/********************************************************/",
+    "static": true,
+    "longname": "React_Redux/actions.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 1,
+    "kind": "function",
+    "name": "createGraph",
+    "memberof": "React_Redux/actions.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/actions.jsx~createGraph",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/actions.jsx",
+    "importStyle": "{createGraph}",
+    "description": "****************** Graph CRUD **********************",
+    "lineNumber": 5,
+    "params": [
+      {
+        "name": "sessionId",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "reportId",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "graphId",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"type\": *, \"sessionId\": *, \"graphId\": *, \"reportId\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 2,
+    "kind": "function",
+    "name": "updateGraph",
+    "memberof": "React_Redux/actions.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/actions.jsx~updateGraph",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/actions.jsx",
+    "importStyle": "{updateGraph}",
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "sessionId",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "id",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "reportId",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "graphId",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"type\": *, \"sessionId\": *, \"id\": *, \"reportId\": *, \"graphId\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 3,
+    "kind": "function",
+    "name": "updateGraphId",
+    "memberof": "React_Redux/actions.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/actions.jsx~updateGraphId",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/actions.jsx",
+    "importStyle": "{updateGraphId}",
+    "description": null,
+    "lineNumber": 24,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "event",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"type\": *, \"name\": *, \"value\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 4,
+    "kind": "function",
+    "name": "updateReportId",
+    "memberof": "React_Redux/actions.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/actions.jsx~updateReportId",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/actions.jsx",
+    "importStyle": "{updateReportId}",
+    "description": null,
+    "lineNumber": 32,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "event",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"type\": *, \"name\": *, \"value\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 5,
+    "kind": "function",
+    "name": "deleteGraph",
+    "memberof": "React_Redux/actions.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/actions.jsx~deleteGraph",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/actions.jsx",
+    "importStyle": "{deleteGraph}",
+    "description": null,
+    "lineNumber": 40,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "sessionId",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "graphId",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"type\": *, \"sessionId\": *, \"params\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 6,
+    "kind": "function",
+    "name": "editGraph",
+    "memberof": "React_Redux/actions.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/actions.jsx~editGraph",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/actions.jsx",
+    "importStyle": "{editGraph}",
+    "description": null,
+    "lineNumber": 50,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "graph",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "report",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"type\": *, \"graph\": *, \"report\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 7,
+    "kind": "function",
+    "name": "retrieveGraphs",
+    "memberof": "React_Redux/actions.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/actions.jsx~retrieveGraphs",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/actions.jsx",
+    "importStyle": "{retrieveGraphs}",
+    "description": "****************** ForceRG Manager **********************",
+    "lineNumber": 60,
+    "params": [
+      {
+        "name": "sessionId",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"type\": *, \"sessionId\": *, \"params\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 8,
+    "kind": "function",
+    "name": "retrieveGraphTypes",
+    "memberof": "React_Redux/actions.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/actions.jsx~retrieveGraphTypes",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/actions.jsx",
+    "importStyle": "{retrieveGraphTypes}",
+    "description": null,
+    "lineNumber": 70,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "sessionId",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"type\": *, \"sessionId\": *, \"params\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 9,
+    "kind": "function",
+    "name": "retrieveReports",
+    "memberof": "React_Redux/actions.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/actions.jsx~retrieveReports",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/actions.jsx",
+    "importStyle": "{retrieveReports}",
+    "description": null,
+    "lineNumber": 80,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "sessionId",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"type\": *, \"sessionId\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 10,
+    "kind": "function",
+    "name": "refreshGraph",
+    "memberof": "React_Redux/actions.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/actions.jsx~refreshGraph",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/actions.jsx",
+    "importStyle": "{refreshGraph}",
+    "description": null,
+    "lineNumber": 87,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "sessionId",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "id",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"type\": *, \"sessionId\": *, \"params\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 11,
+    "kind": "function",
+    "name": "refreshDashboard",
+    "memberof": "React_Redux/actions.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/actions.jsx~refreshDashboard",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/actions.jsx",
+    "importStyle": "{refreshDashboard}",
+    "description": null,
+    "lineNumber": 98,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "{\"type\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 12,
+    "kind": "function",
+    "name": "cancelEditing",
+    "memberof": "React_Redux/actions.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/actions.jsx~cancelEditing",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/actions.jsx",
+    "importStyle": "{cancelEditing}",
+    "description": null,
+    "lineNumber": 104,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "{\"type\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 13,
+    "kind": "function",
+    "name": "retrieveReportMetaData",
+    "memberof": "React_Redux/actions.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/actions.jsx~retrieveReportMetaData",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/actions.jsx",
+    "importStyle": "{retrieveReportMetaData}",
+    "description": "****************** Report API **********************",
+    "lineNumber": 112,
+    "params": [
+      {
+        "name": "sessionId",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "reportId",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"type\": *, \"sessionId\": *, \"reportId\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 14,
+    "kind": "function",
+    "name": "retrieveReportData",
+    "memberof": "React_Redux/actions.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/actions.jsx~retrieveReportData",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/actions.jsx",
+    "importStyle": "{retrieveReportData}",
+    "description": null,
+    "lineNumber": 120,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "sessionId",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "reportId",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "metadata",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"type\": *, \"sessionId\": *, \"reportId\": *, \"metadata\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 15,
+    "kind": "function",
+    "name": "newGraph",
+    "memberof": "React_Redux/actions.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/actions.jsx~newGraph",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/actions.jsx",
+    "importStyle": "{newGraph}",
+    "description": "******************** MISC **************************",
+    "lineNumber": 131,
+    "params": [],
+    "return": {
+      "types": [
+        "{\"type\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 16,
+    "kind": "file",
+    "name": "React_Redux/components/Button.jsx",
+    "content": "import React, { Component, PropTypes } from 'react'\r\nimport { connect } from 'react-redux'\r\n\r\nclass Button extends Component {\r\n\t\t\r\n\trender() {\r\n\t\tconst params = (this.props.params) ? this.props.params : {};\r\n\t\tconst onClickAction = (this.props.onClick) ? this.props.onClick : new Function();\r\n\r\n\t\treturn (\r\n\t\t\t<button onClick={ onClickAction }>{ this.props.label }</button>\r\n\t\t)\r\n\t}\r\n}\r\n\r\nButton.propTypes = {\r\n\tlabel : PropTypes.string.isRequired\r\n};\r\n\r\nexport default connect()(Button);",
+    "static": true,
+    "longname": "React_Redux/components/Button.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 17,
+    "kind": "class",
+    "name": "Button",
+    "memberof": "React_Redux/components/Button.jsx",
+    "static": true,
+    "longname": "React_Redux/components/Button.jsx~Button",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/components/Button.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "interface": false,
+    "extends": [
+      "react~Component"
+    ]
+  },
+  {
+    "__docId__": 18,
+    "kind": "method",
+    "name": "render",
+    "memberof": "React_Redux/components/Button.jsx~Button",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "React_Redux/components/Button.jsx~Button#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 19,
+    "kind": "file",
+    "name": "React_Redux/components/Dashboard.jsx",
+    "content": "import React, { Component, PropTypes } from 'react'\r\nimport { bindActionCreators } from 'redux';\r\nimport { connect } from 'react-redux'\r\nimport * as graphActions from '../actions'\r\nimport Graph from './Graph'\r\nimport GraphGuide from './GraphGuide'\r\nimport Icon from './Icon'\r\nimport Alert from 'react-s-alert'\r\n\r\nimport 'react-s-alert/dist/s-alert-default.css'\r\nimport 'react-s-alert/dist/s-alert-css-effects/scale.css'\r\n\r\nexport const buildGraphs = (props, actions, graphs, reports) => {\r\n\treturn graphs.map(function(graph) {\r\n\t\tconst report \t   = reports.filter((report) => report.id == graph.Report__c)[0],\r\n\t\t\t  editGraph    = actions.editGraph.bind(this, graph),\r\n\t\t\t  refreshGraph = actions.refreshGraph.bind(this, props.sessionId, graph.Id),\r\n\t\t\t  deleteGraph  = actions.deleteGraph.bind(this, props.sessionId, graph.Id);\r\n\r\n\t\treturn (\r\n\t\t\t<li key={ graph.Id }>\r\n\t\t\t\t<div className=\"toolbar\">\r\n\t\t\t\t\t<Icon name=\"pencil\" onClick={ editGraph } />\r\n\t\t\t\t\t<Icon name=\"refresh\" onClick={ refreshGraph } />\r\n\t\t\t\t\t<Icon name=\"trash\" onClick={ deleteGraph } />\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<Graph key={ graph.Id } id={ graph.Id } graph={ graph } report={ report } />\r\n\t\t\t</li>\r\n\t\t)\r\n\t})\r\n}\r\n\r\nclass Dashboard extends Component {\r\n\tcomponentWillMount() {\r\n\t\tconst sessionId = this.props.sessionId;\r\n\r\n\t\tthis.props.actions.retrieveReports(sessionId);\r\n\t\tthis.props.actions.retrieveGraphs(sessionId);\r\n\t\tthis.props.actions.retrieveGraphTypes(sessionId);\r\n\t}\r\n\r\n\trender() {\r\n\t\tconst actions  = this.props.actions\r\n\t\tconst graphs   = buildGraphs(this.props, actions, this.props.graphs, this.props.reports)\r\n\t\tconst newGraph = actions.newGraph.bind(this);\r\n\r\n\t\treturn (\r\n\t\t\t<div id=\"charting\">\r\n\t\t\t\t<ul className=\"graphs\">{ graphs }</ul>\r\n\t\t\t\t<ul className=\"addNewGraph\">\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t\t<Icon id=\"addNewChart\" name=\"plus\" onClick={ newGraph } />\r\n\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\r\n\t\t\t\t<GraphGuide />\r\n\r\n\t\t\t\t<Alert stack={{limit: 7}} />\r\n\t\t\t</div>\r\n\t\t);\r\n\t}\r\n}\r\n\r\nDashboard.propTypes = {\r\n\tgraphs     : PropTypes.array.isRequired,\r\n\treports    : PropTypes.array.isRequired,\r\n\tactions    : PropTypes.object.isRequired,\r\n\tsessionId  : PropTypes.string.isRequired\r\n};\r\n\r\nfunction mapStateToProps(state) {\r\n  \treturn {\r\n    \tgraphs     : state.graphs,\r\n    \treports    : state.reports,\r\n    \tsessionId  : state.session\r\n\t};\r\n}\r\n\r\nfunction mapDispatchToProps(dispatch) {\r\n\treturn {\r\n\t\tactions : bindActionCreators(graphActions, dispatch)\r\n\t}\r\n}\r\n\r\nexport default connect(mapStateToProps, mapDispatchToProps)(Dashboard);",
+    "static": true,
+    "longname": "React_Redux/components/Dashboard.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 20,
+    "kind": "function",
+    "name": "buildGraphs",
+    "memberof": "React_Redux/components/Dashboard.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/components/Dashboard.jsx~buildGraphs",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/components/Dashboard.jsx",
+    "importStyle": "{buildGraphs}",
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "props",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "actions",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "graphs",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "reports",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 21,
+    "kind": "class",
+    "name": "Dashboard",
+    "memberof": "React_Redux/components/Dashboard.jsx",
+    "static": true,
+    "longname": "React_Redux/components/Dashboard.jsx~Dashboard",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/components/Dashboard.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 34,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "interface": false,
+    "extends": [
+      "react~Component"
+    ]
+  },
+  {
+    "__docId__": 22,
+    "kind": "method",
+    "name": "componentWillMount",
+    "memberof": "React_Redux/components/Dashboard.jsx~Dashboard",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "React_Redux/components/Dashboard.jsx~Dashboard#componentWillMount",
+    "access": null,
+    "description": null,
+    "lineNumber": 35,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": []
+  },
+  {
+    "__docId__": 23,
+    "kind": "method",
+    "name": "render",
+    "memberof": "React_Redux/components/Dashboard.jsx~Dashboard",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "React_Redux/components/Dashboard.jsx~Dashboard#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 43,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 24,
+    "kind": "function",
+    "name": "mapStateToProps",
+    "memberof": "React_Redux/components/Dashboard.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/components/Dashboard.jsx~mapStateToProps",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/components/Dashboard.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 72,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"graphs\": *, \"reports\": *, \"sessionId\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 25,
+    "kind": "function",
+    "name": "mapDispatchToProps",
+    "memberof": "React_Redux/components/Dashboard.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/components/Dashboard.jsx~mapDispatchToProps",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/components/Dashboard.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 80,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "dispatch",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"actions\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 26,
+    "kind": "file",
+    "name": "React_Redux/components/Dropdown.jsx",
+    "content": "import React, { Component, PropTypes } from 'react'\r\nimport { connect } from 'react-redux'\r\nimport Icon from './Icon'\r\n\r\nclass Dropdown extends Component {\r\n\trender() {\r\n\t\tvar key  = 0,\r\n\t\t\tself = this;\r\n\r\n\t\tconst defaultValue = (self.props.preSelectedValue) ? self.props.preSelectedValue : '';\r\n\t\tconst onChange \t   = self.props.onChange;\r\n\t\tconst options \t   = self.props.data.map(function(option) {\r\n\t\t\tkey++;\r\n\t\t\treturn <option key={ key } value={ option.value } defaultValue={ defaultValue }>{ option.label }</option>\r\n\t\t});\r\n\r\n\t\treturn (\r\n\t\t\t<div>\r\n\t\t\t\t<label>\r\n\t\t\t\t\t{ self.props.label }\r\n\t\t\t\t\t<Icon name=\"question-circle-o\" />\r\n\t\t\t\t</label>\r\n\r\n\t\t\t\t<select id=\"chooseGraph\" defaultValue={ self.props.preSelectedValue } onChange={ onChange }>\r\n\t\t\t\t\t<option key=\"0\" value=\"0\">Select an Option</option>\r\n\t\t\t\t\t{ options }\r\n\t\t\t\t</select>\r\n\t\t\t</div>\r\n\t\t)\r\n\t}\r\n}\r\n\r\nDropdown.propTypes = {\r\n\tdata  : PropTypes.array.isRequired,\r\n\tlabel : PropTypes.string.isRequired\r\n};\r\n\r\nexport default connect()(Dropdown);",
+    "static": true,
+    "longname": "React_Redux/components/Dropdown.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 27,
+    "kind": "class",
+    "name": "Dropdown",
+    "memberof": "React_Redux/components/Dropdown.jsx",
+    "static": true,
+    "longname": "React_Redux/components/Dropdown.jsx~Dropdown",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/components/Dropdown.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "interface": false,
+    "extends": [
+      "react~Component"
+    ]
+  },
+  {
+    "__docId__": 28,
+    "kind": "method",
+    "name": "render",
+    "memberof": "React_Redux/components/Dropdown.jsx~Dropdown",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "React_Redux/components/Dropdown.jsx~Dropdown#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 29,
+    "kind": "file",
+    "name": "React_Redux/components/Error.jsx",
+    "content": "import React, { Component, PropTypes } from 'react'\r\nimport { connect } from 'react-redux'\r\n\r\nclass Dropdown extends Component {\r\n\trender() {\r\n\t\treturn (\r\n\t\t\t<div className=\"error\">\r\n\t\t\t\t{ this.props.children }\r\n\t\t\t</div>\r\n\t\t)\r\n\t}\r\n}\r\n\r\nexport default connect()(Dropdown);",
+    "static": true,
+    "longname": "React_Redux/components/Error.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 30,
+    "kind": "class",
+    "name": "Dropdown",
+    "memberof": "React_Redux/components/Error.jsx",
+    "static": true,
+    "longname": "React_Redux/components/Error.jsx~Dropdown",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/components/Error.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "interface": false,
+    "extends": [
+      "react~Component"
+    ]
+  },
+  {
+    "__docId__": 31,
+    "kind": "method",
+    "name": "render",
+    "memberof": "React_Redux/components/Error.jsx~Dropdown",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "React_Redux/components/Error.jsx~Dropdown#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 32,
+    "kind": "file",
+    "name": "React_Redux/components/Graph.jsx",
+    "content": "import React, { Component, PropTypes } from 'react'\r\nimport { bindActionCreators } from 'redux'\r\nimport FusionCharts from 'fusioncharts'\r\nimport charts from 'fusioncharts/fusioncharts.charts'\r\nimport reactFusionCharts from 'react-fusioncharts'\r\nimport { connect } from 'react-redux'\r\nimport * as graphActions from '../actions'\r\nimport * as CONSTANTS from '../constants'\r\n\r\ncharts(FusionCharts)\r\n\r\nclass Graph extends Component {\r\n\r\n\tcomponentWillMount() {\r\n\t\tlet self = this;\r\n\t\tconst mode\t\t= this.props.mode,\r\n\t\t\t  sessionId = this.props.sessionId,\r\n\t\t\t  report    = (this.props.report) ? this.props.report : null,\r\n\t\t\t  reportId  = (report) ? report.id : null\r\n\r\n\t\tif (reportId) {\r\n\t\t\tif (report && !report.metadata) {\r\n\t\t\t\tself.props.actions.retrieveReportMetaData(sessionId, reportId)\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n\tcomponentDidMount() {\r\n\t\tconst graphId     = (this.props.id) ? this.props.id : this.props.graph.Id,\r\n\t\t\t  graphTypeId = this.props.graph.Graph__c\r\n\t\tlet data = (this.props.report && this.props.report.data) ? this.props.report.data : []\r\n\r\n\t\tif (graphId && data) {\r\n\t\t\tthis.state = {\r\n\t\t\t\tchart : new FusionCharts({\r\n\t\t\t\t\trenderAt   : graphId,\r\n\t\t\t\t    type       : graphTypeId,\r\n\t\t\t\t    width      : '500',\r\n\t\t\t\t    height     : '300',\r\n\t\t\t\t    dataFormat : 'json',\r\n\t\t\t\t    dataSource : {\r\n\t\t\t\t    \t\"data\" : data\r\n\t\t\t\t    }\r\n\t\t\t\t}).render()\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n\tcomponentWillReceiveProps(nextProps) {\r\n\t\tlet reportId, sessionId, metadata, data\r\n\t\tconst mode\t\t= this.props.mode, \r\n\t\t\t  report    = (nextProps && nextProps.report) ? nextProps.report : this.props.report,\r\n\t\t\t  graph     = (nextProps && nextProps.graph) ? nextProps.graph : this.props.graph,\r\n\t\t\t  chart     = this.state.chart,\r\n\t\t\t  actions   = this.props.actions,\r\n\t\t\t  oldGraph  = this.props.graph.Graph__c,\r\n\t\t\t  newGraph  = nextProps.graph.Graph__c,\r\n\t\t\t  oldReport = this.props.graph.Report__c,\r\n\t\t\t  newReport = nextProps.graph.Report__c\r\n\r\n\t\tsessionId = this.props.sessionId\r\n\t\treportId  = (newReport) ? newReport : ((oldReport) ? oldReport : '')\r\n\r\n\t\tif (report && !report.metadata && mode == CONSTANTS.READY) {\r\n\t\t\tmetadata = (report.metadata) ? report.metadata : this.props.actions.retrieveReportMetaData(sessionId, reportId)\r\n\t\t} else if (report.metadata) {\r\n\t\t\tmetadata = report.metadata\r\n\t\t}\r\n\r\n\t\tif (report && report.metadata && !report.data && mode == CONSTANTS.READY) {\r\n\t\t\tdata = (report.data) ? report.data : this.props.actions.retrieveReportData(sessionId, reportId, report.metadata)\r\n\t\t} else if (report.data) {\r\n\t\t\tdata = report.data\r\n\t\t}\r\n\r\n\t\tif (chart && data) {\r\n\t\t\tconst existingData = chart.getJSONData()\r\n\r\n\t\t\tif (existingData.data && existingData.data.length != data.length) {\r\n\t\t\t\tchart.setChartData({ data : data })\r\n\t\t\t\tchart.render()\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\tif (oldGraph != newGraph) {\r\n\t\t\tchart.chartType(newGraph)\r\n\t\t\tchart.render()\r\n\t\t}\r\n\t}\r\n\r\n\trender() {\r\n\t\tconst graphId = (this.props.id) ? this.props.id : this.props.graph.Id\r\n\r\n\t\treturn (\r\n\t\t\t<div id={ graphId } />\r\n\t\t);\r\n\t}\r\n}\r\n\r\nGraph.propTypes = {\r\n\tgraphs    : PropTypes.array.isRequired,\r\n\treports   : PropTypes.array.isRequired,\r\n\tactions   : PropTypes.object.isRequired,\r\n\tsessionId : PropTypes.string.isRequired,\r\n\tmode      : PropTypes.string.isRequired\r\n};\r\n\r\nfunction mapStateToProps(state) {\r\n  \treturn {\r\n    \tgraphs    : state.graphs,\r\n    \treports   : state.reports,\r\n    \tmode      : state.mode,\r\n    \tsessionId : state.session\r\n\t};\r\n}\r\n\r\nfunction mapDispatchToProps(dispatch) {\r\n\treturn {\r\n\t\tactions : bindActionCreators(graphActions, dispatch)\r\n\t}\r\n}\r\n\r\nexport default connect(mapStateToProps, mapDispatchToProps)(Graph);",
+    "static": true,
+    "longname": "React_Redux/components/Graph.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 33,
+    "kind": "class",
+    "name": "Graph",
+    "memberof": "React_Redux/components/Graph.jsx",
+    "static": true,
+    "longname": "React_Redux/components/Graph.jsx~Graph",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/components/Graph.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "interface": false,
+    "extends": [
+      "react~Component"
+    ]
+  },
+  {
+    "__docId__": 34,
+    "kind": "method",
+    "name": "componentWillMount",
+    "memberof": "React_Redux/components/Graph.jsx~Graph",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "React_Redux/components/Graph.jsx~Graph#componentWillMount",
+    "access": null,
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": []
+  },
+  {
+    "__docId__": 35,
+    "kind": "method",
+    "name": "componentDidMount",
+    "memberof": "React_Redux/components/Graph.jsx~Graph",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "React_Redux/components/Graph.jsx~Graph#componentDidMount",
+    "access": null,
+    "description": null,
+    "lineNumber": 28,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": []
+  },
+  {
+    "__docId__": 36,
+    "kind": "member",
+    "name": "state",
+    "memberof": "React_Redux/components/Graph.jsx~Graph",
+    "static": false,
+    "longname": "React_Redux/components/Graph.jsx~Graph#state",
+    "access": null,
+    "description": null,
+    "lineNumber": 34,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "{\"chart\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 37,
+    "kind": "method",
+    "name": "componentWillReceiveProps",
+    "memberof": "React_Redux/components/Graph.jsx~Graph",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "React_Redux/components/Graph.jsx~Graph#componentWillReceiveProps",
+    "access": null,
+    "description": null,
+    "lineNumber": 49,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "nextProps",
+        "types": [
+          "*"
+        ]
+      }
+    ]
+  },
+  {
+    "__docId__": 38,
+    "kind": "method",
+    "name": "render",
+    "memberof": "React_Redux/components/Graph.jsx~Graph",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "React_Redux/components/Graph.jsx~Graph#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 91,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 39,
+    "kind": "function",
+    "name": "mapStateToProps",
+    "memberof": "React_Redux/components/Graph.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/components/Graph.jsx~mapStateToProps",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/components/Graph.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 108,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"graphs\": *, \"reports\": *, \"mode\": *, \"sessionId\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 40,
+    "kind": "function",
+    "name": "mapDispatchToProps",
+    "memberof": "React_Redux/components/Graph.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/components/Graph.jsx~mapDispatchToProps",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/components/Graph.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 117,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "dispatch",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"actions\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 41,
+    "kind": "file",
+    "name": "React_Redux/components/GraphGuide.jsx",
+    "content": "import React, { Component, PropTypes } from 'react'\r\nimport { bindActionCreators } from 'redux';\r\nimport { connect } from 'react-redux'\r\nimport * as CONSTANTS from '../constants'\r\nimport * as graphActions from '../actions'\r\nimport Dropdown from './Dropdown'\r\nimport Error from './Error'\r\nimport Header from './Header'\r\nimport Button from './Button'\r\nimport Modal from './Modal'\r\nimport Icon from './Icon'\r\nimport Graph from './Graph'\r\nimport * as utils from '../libs/utils'\r\n\r\nclass GraphGuide extends Component {\r\n\trender() {\r\n\t\tconst mode          = this.props.mode\r\n\t\tconst actions       = this.props.actions\r\n\t\tconst graph         = this.props.graph\r\n\t\tconst sessionId \t= this.props.sessionId\r\n\t\tconst cancelEditing = actions.cancelEditing.bind(this)\r\n\t\tconst previewId     = 'previewContainer-' + utils.generateGUID()\r\n\r\n\t\tlet dropdownReports, dropdownGraphTypes,\r\n\t\t\treportId, graphTypeId\r\n\r\n\t\tvar report, buttonText, buttonAction, buttonParams\r\n\t\t\r\n\t\tif (mode == CONSTANTS.EDIT || mode == CONSTANTS.NEW) {\r\n\t\t\tif (graph && graph.Graph__c && this.props.reports) {\r\n\t\t\t\treport = this.props.reports.filter((report) => report.id == graph.Report__c)[0]\r\n\t\t\t}\r\n\r\n\t\t\tdropdownReports = this.props.reports.map(function(report) {\r\n\t\t\t\treturn { \r\n\t\t\t\t\tvalue : report.id, \r\n\t\t\t\t\tlabel : report.name \r\n\t\t\t\t}\r\n\t\t\t})\r\n\t\t\tdropdownGraphTypes = this.props.graphTypes.map(function(graphType) {\r\n\t\t\t\treturn { \r\n\t\t\t\t\tvalue : graphType.DeveloperName, \r\n\t\t\t\t\tlabel : graphType.MasterLabel\r\n\t\t\t\t};\r\n\t\t\t})\r\n\r\n\t\t\tif (graph.Id != null) {\r\n\t\t\t\tbuttonText   = CONSTANTS.MODAL_BUTTON_UPDATE\r\n\t\t\t\tbuttonAction = actions.updateGraph.bind(this, sessionId, graph.Id, graph.Report__c, graph.Graph__c)\r\n\t\t\t} else {\r\n\t\t\t\tbuttonText   = CONSTANTS.MODAL_BUTTON_CREATE\r\n\t\t\t\tbuttonAction = actions.createGraph.bind(this, sessionId, graph.Report__c, graph.Graph__c)\r\n\t\t\t\tbuttonParams = []\r\n\t\t\t}\r\n\r\n\t\t\treturn (\r\n\t\t\t\t<Modal>\r\n\t\t\t\t\t<div className=\"build\">\r\n\t\t\t\t\t\t<Header label={ CONSTANTS.MODAL_HEADER } />\r\n\r\n\t\t\t\t\t\t<Dropdown label={ CONSTANTS.CHOOSE_REPORT } data={ dropdownReports } preSelectedValue={ graph.Report__c } onChange={ actions.updateReportId } />\r\n\r\n\t\t\t\t\t\t<Error>{ CONSTANTS.ERROR_MESSAGE }</Error>\r\n\r\n\t\t\t\t\t\t<Dropdown label={ CONSTANTS.CHOOSE_GRAPH } data={ dropdownGraphTypes } preSelectedValue={ graph.Graph__c } onChange={ actions.updateGraphId } />\r\n\r\n\t\t\t\t\t\t<div className=\"parameters\">\r\n\t\t\t\t\t\t\t<label>\r\n\t\t\t\t\t\t\t\t{ CONSTANTS.CHECKBOX_GROUP_HEADER }\r\n\t\t\t\t\t\t\t</label>\r\n\r\n\t\t\t\t\t\t\t<ul style={{ listStyleType : 'none' }}>\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<input id=\"1\" type=\"checkbox\" className=\"checkbox\" value=\"0\" />\r\n\t\t\t\t\t\t\t\t\t<label htmlFor=\"1\">{ CONSTANTS.CHECKBOX_1 }</label>\r\n\t\t\t\t\t\t\t\t</li>\r\n\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<input id=\"2\" type=\"checkbox\" className=\"checkbox\" value=\"1\" />\r\n\t\t\t\t\t\t\t\t\t<label htmlFor=\"2\">{ CONSTANTS.CHECKBOX_2 }</label>\r\n\t\t\t\t\t\t\t\t</li>\r\n\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<input id=\"3\" type=\"checkbox\" className=\"checkbox\" value=\"2\" />\r\n\t\t\t\t\t\t\t\t\t<label htmlFor=\"3\">{ CONSTANTS.CHECKBOX_3 }</label>\r\n\t\t\t\t\t\t\t\t</li>\r\n\r\n\t\t\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t\t\t<input id=\"4\" type=\"checkbox\" className=\"checkbox\" value=\"3\" />\r\n\t\t\t\t\t\t\t\t\t<label htmlFor=\"4\">{ CONSTANTS.CHECKBOX_4 }</label>\r\n\t\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t<div className=\"preview\">\r\n\t\t\t\t\t\t<Icon name=\"close\" onClick={ cancelEditing } />\r\n\r\n\t\t\t\t\t\t<h1>{ CONSTANTS.PREVIEW_HEADER }</h1>\r\n\r\n\t\t\t\t\t\t<div id=\"chartPreview\">\r\n\t\t\t\t\t\t\t<Graph key= { previewId } id={ previewId } graph={ graph } report={ report } />\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t<Button label={ buttonText } onClick={ buttonAction } params={ buttonParams } />\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div style={{ clear : 'both' }} />\r\n\t\t\t\t</Modal>\r\n\t\t\t);\r\n\t\t} else {\r\n\t\t\treturn (\r\n\t\t\t\t<div />\r\n\t\t\t);\r\n\t\t}\r\n\t}\r\n}\r\n\r\nGraphGuide.propTypes = {\r\n\tactions    : PropTypes.object.isRequired,\r\n\tgraphTypes : PropTypes.array.isRequired,\r\n\treports    : PropTypes.array.isRequired,\r\n\tsessionId  : PropTypes.string.isRequired,\r\n\tmode       : PropTypes.string.isRequired\r\n};\r\n\r\nfunction mapStateToProps(state) {\r\n  \treturn {\r\n  \t\tsessionId  : state.session,\r\n  \t\tgraphTypes : state.graphTypes,\r\n  \t\treports    : state.reports,\r\n  \t\tgraph \t   : state.selectedGraph,\r\n  \t\tmode       : state.mode\r\n\t};\r\n}\r\n\r\nfunction mapDispatchToProps(dispatch) {\r\n\treturn {\r\n\t\tactions : bindActionCreators(graphActions, dispatch)\r\n\t}\r\n}\r\n\r\nexport default connect(mapStateToProps, mapDispatchToProps)(GraphGuide);",
+    "static": true,
+    "longname": "React_Redux/components/GraphGuide.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 42,
+    "kind": "class",
+    "name": "GraphGuide",
+    "memberof": "React_Redux/components/GraphGuide.jsx",
+    "static": true,
+    "longname": "React_Redux/components/GraphGuide.jsx~GraphGuide",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/components/GraphGuide.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "interface": false,
+    "extends": [
+      "react~Component"
+    ]
+  },
+  {
+    "__docId__": 43,
+    "kind": "method",
+    "name": "render",
+    "memberof": "React_Redux/components/GraphGuide.jsx~GraphGuide",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "React_Redux/components/GraphGuide.jsx~GraphGuide#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 44,
+    "kind": "function",
+    "name": "mapStateToProps",
+    "memberof": "React_Redux/components/GraphGuide.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/components/GraphGuide.jsx~mapStateToProps",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/components/GraphGuide.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 126,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"sessionId\": *, \"graphTypes\": *, \"reports\": *, \"graph\": *, \"mode\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 45,
+    "kind": "function",
+    "name": "mapDispatchToProps",
+    "memberof": "React_Redux/components/GraphGuide.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/components/GraphGuide.jsx~mapDispatchToProps",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/components/GraphGuide.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 136,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "dispatch",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"actions\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 46,
+    "kind": "file",
+    "name": "React_Redux/components/Header.jsx",
+    "content": "import React, { Component, PropTypes } from 'react'\r\nimport { connect } from 'react-redux'\r\n\r\nclass Header extends Component {\r\n\trender() {\r\n\t\tconst type = (this.props.type) ? this.props.type : '';\r\n\r\n\t\tswitch(type) {\r\n\t\t\tcase 'h2':\r\n\t\t\t\treturn(\r\n\t\t\t\t\t<h2>{ this.props.label }</h2>\r\n\t\t\t\t)\r\n\t\t\tdefault:\r\n\t\t\t\treturn(\r\n\t\t\t\t\t<h1>{ this.props.label }</h1>\r\n\t\t\t\t)\r\n\t\t}\r\n\t}\r\n}\r\n\r\nHeader.propTypes = {\r\n\tlabel : PropTypes.string.isRequired\r\n};\r\n\r\nexport default connect()(Header);",
+    "static": true,
+    "longname": "React_Redux/components/Header.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 47,
+    "kind": "class",
+    "name": "Header",
+    "memberof": "React_Redux/components/Header.jsx",
+    "static": true,
+    "longname": "React_Redux/components/Header.jsx~Header",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/components/Header.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "interface": false,
+    "extends": [
+      "react~Component"
+    ]
+  },
+  {
+    "__docId__": 48,
+    "kind": "method",
+    "name": "render",
+    "memberof": "React_Redux/components/Header.jsx~Header",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "React_Redux/components/Header.jsx~Header#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 49,
+    "kind": "file",
+    "name": "React_Redux/components/Icon.jsx",
+    "content": "import React, { Component, PropTypes } from 'react'\r\nimport { connect } from 'react-redux'\r\n\r\nclass Icon extends Component {\r\n\trender() {\r\n\t\tconst id \t  = (this.props.id) ? this.props.id : '';\r\n\t\tconst name    = (this.props.name) ? 'fa fa-' + this.props.name : '';\r\n\t\tconst params  = (this.props.params) ? this.props.params : {};\r\n\t\tconst onClick = this.props.onClick;\r\n\r\n\t\treturn (\r\n\t\t\t<fa id={ id } className={ name } aria-hidden=\"true\"\r\n\t\t\t    onClick={ onClick } \r\n\t\t\t/>\r\n\t\t);\r\n\t}\r\n}\r\n\r\nIcon.propTypes = {\r\n\tname : PropTypes.string.isRequired\r\n}\r\n\r\nexport default connect()(Icon);",
+    "static": true,
+    "longname": "React_Redux/components/Icon.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 50,
+    "kind": "class",
+    "name": "Icon",
+    "memberof": "React_Redux/components/Icon.jsx",
+    "static": true,
+    "longname": "React_Redux/components/Icon.jsx~Icon",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/components/Icon.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "interface": false,
+    "extends": [
+      "react~Component"
+    ]
+  },
+  {
+    "__docId__": 51,
+    "kind": "method",
+    "name": "render",
+    "memberof": "React_Redux/components/Icon.jsx~Icon",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "React_Redux/components/Icon.jsx~Icon#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 52,
+    "kind": "file",
+    "name": "React_Redux/components/Modal.jsx",
+    "content": "import React, { Component, PropTypes } from 'react'\r\nimport { connect } from 'react-redux'\r\n\r\nclass Modal extends Component {\r\n\trender() {\r\n\t\treturn (\r\n\t\t\t<div className=\"modal\">\r\n\t\t\t\t<div className=\"modal-content\">\r\n\t\t\t\t\t{ this.props.children }\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t);\r\n\t}\r\n}\r\n\r\nexport default connect()(Modal);",
+    "static": true,
+    "longname": "React_Redux/components/Modal.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 53,
+    "kind": "class",
+    "name": "Modal",
+    "memberof": "React_Redux/components/Modal.jsx",
+    "static": true,
+    "longname": "React_Redux/components/Modal.jsx~Modal",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/components/Modal.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "interface": false,
+    "extends": [
+      "react~Component"
+    ]
+  },
+  {
+    "__docId__": 54,
+    "kind": "method",
+    "name": "render",
+    "memberof": "React_Redux/components/Modal.jsx~Modal",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "React_Redux/components/Modal.jsx~Modal#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 55,
+    "kind": "file",
+    "name": "React_Redux/constants.jsx",
+    "content": "/* Actions */\r\nexport const CREATE_GRAPH                      = 'CREATE_GRAPH'\r\nexport const CREATE_GRAPH_ERROR                = 'CREATE_GRAPH_ERROR'\r\nexport const CREATE_GRAPH_COMPLETE             = 'CREATE_GRAPH_COMPLETE'\r\nexport const NEW_GRAPH                         = 'NEW_GRAPH'\r\nexport const EDIT_GRAPH                        = 'EDIT_GRAPH'\r\nexport const CANCEL_EDITING                    = 'CANCEL_EDITING'\r\nexport const DELETE_GRAPH                      = 'DELETE_GRAPH'\r\nexport const DELETE_GRAPH_COMPLETE             = 'DELETE_GRAPH_COMPLETE'\r\nexport const DELETE_GRAPH_ERROR                = 'DELETE_GRAPH_ERROR'\r\nexport const REFRESH_GRAPH \t                   = 'REFRESH_GRAPH'\r\nexport const REFRESH_GRAPH_ERROR \t           = 'REFRESH_GRAPH_ERROR'\r\nexport const REFRESH_GRAPH_COMPLETE            = 'REFRESH_GRAPH_COMPLETE'\r\nexport const UPDATE_GRAPH \t                   = 'UPDATE_GRAPH'\r\nexport const UPDATE_GRAPH_ERROR \t           = 'UPDATE_GRAPH_ERROR'\r\nexport const UPDATE_GRAPH_COMPLETE \t           = 'UPDATE_GRAPH_COMPLETE'\r\nexport const UPDATE_GRAPH_PREVIEW \t           = 'UPDATE_GRAPH_PREVIEW'\r\nexport const UPDATE_REPORT_PREVIEW \t           = 'UPDATE_REPORT_PREVIEW'\r\nexport const RETRIEVE_GRAPHS                   = 'RETRIEVE_GRAPHS'\r\nexport const RETRIEVE_REPORT_DATA              = 'RETRIEVE_REPORT_DATA'\r\nexport const RETRIEVE_REPORT_DATA_ERROR        = 'RETRIEVE_REPORT_DATA_ERROR'\r\nexport const RETRIEVE_REPORT_DATA_COMPLETE     = 'RETRIEVE_REPORT_DATA_COMPLETE'\r\nexport const RETRIEVE_REPORT_METADATA          = 'RETRIEVE_REPORT_METADATA'\r\nexport const RETRIEVE_REPORT_METADATA_ERROR    = 'RETRIEVE_REPORT_METADATA_ERROR'\r\nexport const RETRIEVE_REPORT_METADATA_COMPLETE = 'RETRIEVE_REPORT_METADATA_COMPLETE'\r\nexport const LOAD_REPORTS                      = 'LOAD_REPORTS'\r\nexport const LOAD_REPORTS_ERROR                = 'LOAD_REPORTS_ERROR'\r\nexport const LOAD_REPORTS_COMPLETE             = 'LOAD_REPORTS_COMPLETE'\r\nexport const LOAD_GRAPHS                       = 'LOAD_GRAPHS'\r\nexport const LOAD_GRAPHS_ERROR                 = 'LOAD_GRAPHS_ERROR'\r\nexport const LOAD_GRAPHS_COMPLETE              = 'LOAD_GRAPHS_COMPLETE'\r\nexport const LOAD_GRAPH_TYPES                  = 'LOAD_GRAPH_TYPES'\r\nexport const LOAD_GRAPH_TYPES_ERROR            = 'LOAD_GRAPH_TYPES_ERROR'\r\nexport const LOAD_GRAPH_TYPES_COMPLETE         = 'LOAD_GRAPH_TYPES_COMPLETE'\r\nexport const PARAM_NAME_ACTION                 = 'action'\r\nexport const PARAM_VALUE_RETRIEVE_GRAPH        = 'retrieveGraph'\r\nexport const PARAM_VALUE_RETRIEVE_GRAPHS       = 'retrieveGraphs'\r\nexport const PARAM_VALUE_GRAPHTYPE             = 'retrieveGraphTypes'\r\n\r\nexport const LOADING = 'LOADING'\r\nexport const NEW     = 'NEW'\r\nexport const EDIT    = 'EDIT'\r\nexport const DELETE  = 'DELETE'\r\nexport const CANCEL  = 'CANCEL'\r\nexport const UPDATE  = 'UPDATE'\r\nexport const VIEW    = 'VIEW'\r\nexport const READY   = 'READY'\r\n\r\n/* Labels */\r\nexport const MODAL_HEADER          = 'Build Graph'\r\nexport const MODAL_BUTTON_UPDATE   = 'Update'\r\nexport const MODAL_BUTTON_CREATE   = 'Create'\r\nexport const CHOOSE_REPORT         = 'Choose Your Report'\r\nexport const CHOOSE_GRAPH          = 'Choose Your Graph'\r\nexport const CHECKBOX_GROUP_HEADER = 'Customize'\r\nexport const CHECKBOX_1            = 'Header'\r\nexport const CHECKBOX_2            = 'Subheader'\r\nexport const CHECKBOX_3            = 'X Axis Label'\r\nexport const CHECKBOX_4            = 'Y Axis Label'\r\nexport const ERROR_MESSAGE         = 'You big dummy, pick your report!'\r\nexport const PREVIEW_HEADER        = 'Graph Preview'\r\n\r\n/* Reducers */\r\nexport const ID     = 'id'\r\nexport const GRAPH  = 'Graph__c'\r\nexport const REPORT = 'Report__c'\r\n\r\n/* AJAX */\r\nexport const REPORT_API          = '/services/data/v37.0/analytics/reports/'\r\nexport const REPORT_API_QUERY    = 'query'\r\nexport const REPORT_API_DESCRIBE = '/describe'\r\nexport const APEXREST_PROXY      = '/services/proxy'",
+    "static": true,
+    "longname": "React_Redux/constants.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 56,
+    "kind": "variable",
+    "name": "CREATE_GRAPH",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~CREATE_GRAPH",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{CREATE_GRAPH}",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 57,
+    "kind": "variable",
+    "name": "CREATE_GRAPH_ERROR",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~CREATE_GRAPH_ERROR",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{CREATE_GRAPH_ERROR}",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "variable",
+    "name": "CREATE_GRAPH_COMPLETE",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~CREATE_GRAPH_COMPLETE",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{CREATE_GRAPH_COMPLETE}",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "variable",
+    "name": "NEW_GRAPH",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~NEW_GRAPH",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{NEW_GRAPH}",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 60,
+    "kind": "variable",
+    "name": "EDIT_GRAPH",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~EDIT_GRAPH",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{EDIT_GRAPH}",
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 61,
+    "kind": "variable",
+    "name": "CANCEL_EDITING",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~CANCEL_EDITING",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{CANCEL_EDITING}",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 62,
+    "kind": "variable",
+    "name": "DELETE_GRAPH",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~DELETE_GRAPH",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{DELETE_GRAPH}",
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "variable",
+    "name": "DELETE_GRAPH_COMPLETE",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~DELETE_GRAPH_COMPLETE",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{DELETE_GRAPH_COMPLETE}",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 64,
+    "kind": "variable",
+    "name": "DELETE_GRAPH_ERROR",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~DELETE_GRAPH_ERROR",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{DELETE_GRAPH_ERROR}",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 65,
+    "kind": "variable",
+    "name": "REFRESH_GRAPH",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~REFRESH_GRAPH",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{REFRESH_GRAPH}",
+    "description": null,
+    "lineNumber": 11,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 66,
+    "kind": "variable",
+    "name": "REFRESH_GRAPH_ERROR",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~REFRESH_GRAPH_ERROR",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{REFRESH_GRAPH_ERROR}",
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 67,
+    "kind": "variable",
+    "name": "REFRESH_GRAPH_COMPLETE",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~REFRESH_GRAPH_COMPLETE",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{REFRESH_GRAPH_COMPLETE}",
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 68,
+    "kind": "variable",
+    "name": "UPDATE_GRAPH",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~UPDATE_GRAPH",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{UPDATE_GRAPH}",
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 69,
+    "kind": "variable",
+    "name": "UPDATE_GRAPH_ERROR",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~UPDATE_GRAPH_ERROR",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{UPDATE_GRAPH_ERROR}",
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 70,
+    "kind": "variable",
+    "name": "UPDATE_GRAPH_COMPLETE",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~UPDATE_GRAPH_COMPLETE",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{UPDATE_GRAPH_COMPLETE}",
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 71,
+    "kind": "variable",
+    "name": "UPDATE_GRAPH_PREVIEW",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~UPDATE_GRAPH_PREVIEW",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{UPDATE_GRAPH_PREVIEW}",
+    "description": null,
+    "lineNumber": 17,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 72,
+    "kind": "variable",
+    "name": "UPDATE_REPORT_PREVIEW",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~UPDATE_REPORT_PREVIEW",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{UPDATE_REPORT_PREVIEW}",
+    "description": null,
+    "lineNumber": 18,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 73,
+    "kind": "variable",
+    "name": "RETRIEVE_GRAPHS",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~RETRIEVE_GRAPHS",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{RETRIEVE_GRAPHS}",
+    "description": null,
+    "lineNumber": 19,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 74,
+    "kind": "variable",
+    "name": "RETRIEVE_REPORT_DATA",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~RETRIEVE_REPORT_DATA",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{RETRIEVE_REPORT_DATA}",
+    "description": null,
+    "lineNumber": 20,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 75,
+    "kind": "variable",
+    "name": "RETRIEVE_REPORT_DATA_ERROR",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~RETRIEVE_REPORT_DATA_ERROR",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{RETRIEVE_REPORT_DATA_ERROR}",
+    "description": null,
+    "lineNumber": 21,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 76,
+    "kind": "variable",
+    "name": "RETRIEVE_REPORT_DATA_COMPLETE",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~RETRIEVE_REPORT_DATA_COMPLETE",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{RETRIEVE_REPORT_DATA_COMPLETE}",
+    "description": null,
+    "lineNumber": 22,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 77,
+    "kind": "variable",
+    "name": "RETRIEVE_REPORT_METADATA",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~RETRIEVE_REPORT_METADATA",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{RETRIEVE_REPORT_METADATA}",
+    "description": null,
+    "lineNumber": 23,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 78,
+    "kind": "variable",
+    "name": "RETRIEVE_REPORT_METADATA_ERROR",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~RETRIEVE_REPORT_METADATA_ERROR",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{RETRIEVE_REPORT_METADATA_ERROR}",
+    "description": null,
+    "lineNumber": 24,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 79,
+    "kind": "variable",
+    "name": "RETRIEVE_REPORT_METADATA_COMPLETE",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~RETRIEVE_REPORT_METADATA_COMPLETE",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{RETRIEVE_REPORT_METADATA_COMPLETE}",
+    "description": null,
+    "lineNumber": 25,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 80,
+    "kind": "variable",
+    "name": "LOAD_REPORTS",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~LOAD_REPORTS",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{LOAD_REPORTS}",
+    "description": null,
+    "lineNumber": 26,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 81,
+    "kind": "variable",
+    "name": "LOAD_REPORTS_ERROR",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~LOAD_REPORTS_ERROR",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{LOAD_REPORTS_ERROR}",
+    "description": null,
+    "lineNumber": 27,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 82,
+    "kind": "variable",
+    "name": "LOAD_REPORTS_COMPLETE",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~LOAD_REPORTS_COMPLETE",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{LOAD_REPORTS_COMPLETE}",
+    "description": null,
+    "lineNumber": 28,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 83,
+    "kind": "variable",
+    "name": "LOAD_GRAPHS",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~LOAD_GRAPHS",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{LOAD_GRAPHS}",
+    "description": null,
+    "lineNumber": 29,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 84,
+    "kind": "variable",
+    "name": "LOAD_GRAPHS_ERROR",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~LOAD_GRAPHS_ERROR",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{LOAD_GRAPHS_ERROR}",
+    "description": null,
+    "lineNumber": 30,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 85,
+    "kind": "variable",
+    "name": "LOAD_GRAPHS_COMPLETE",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~LOAD_GRAPHS_COMPLETE",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{LOAD_GRAPHS_COMPLETE}",
+    "description": null,
+    "lineNumber": 31,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 86,
+    "kind": "variable",
+    "name": "LOAD_GRAPH_TYPES",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~LOAD_GRAPH_TYPES",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{LOAD_GRAPH_TYPES}",
+    "description": null,
+    "lineNumber": 32,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 87,
+    "kind": "variable",
+    "name": "LOAD_GRAPH_TYPES_ERROR",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~LOAD_GRAPH_TYPES_ERROR",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{LOAD_GRAPH_TYPES_ERROR}",
+    "description": null,
+    "lineNumber": 33,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 88,
+    "kind": "variable",
+    "name": "LOAD_GRAPH_TYPES_COMPLETE",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~LOAD_GRAPH_TYPES_COMPLETE",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{LOAD_GRAPH_TYPES_COMPLETE}",
+    "description": null,
+    "lineNumber": 34,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 89,
+    "kind": "variable",
+    "name": "PARAM_NAME_ACTION",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~PARAM_NAME_ACTION",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{PARAM_NAME_ACTION}",
+    "description": null,
+    "lineNumber": 35,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 90,
+    "kind": "variable",
+    "name": "PARAM_VALUE_RETRIEVE_GRAPH",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~PARAM_VALUE_RETRIEVE_GRAPH",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{PARAM_VALUE_RETRIEVE_GRAPH}",
+    "description": null,
+    "lineNumber": 36,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 91,
+    "kind": "variable",
+    "name": "PARAM_VALUE_RETRIEVE_GRAPHS",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~PARAM_VALUE_RETRIEVE_GRAPHS",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{PARAM_VALUE_RETRIEVE_GRAPHS}",
+    "description": null,
+    "lineNumber": 37,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 92,
+    "kind": "variable",
+    "name": "PARAM_VALUE_GRAPHTYPE",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~PARAM_VALUE_GRAPHTYPE",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{PARAM_VALUE_GRAPHTYPE}",
+    "description": null,
+    "lineNumber": 38,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 93,
+    "kind": "variable",
+    "name": "LOADING",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~LOADING",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{LOADING}",
+    "description": null,
+    "lineNumber": 40,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 94,
+    "kind": "variable",
+    "name": "NEW",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~NEW",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{NEW}",
+    "description": null,
+    "lineNumber": 41,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 95,
+    "kind": "variable",
+    "name": "EDIT",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~EDIT",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{EDIT}",
+    "description": null,
+    "lineNumber": 42,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 96,
+    "kind": "variable",
+    "name": "DELETE",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~DELETE",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{DELETE}",
+    "description": null,
+    "lineNumber": 43,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 97,
+    "kind": "variable",
+    "name": "CANCEL",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~CANCEL",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{CANCEL}",
+    "description": null,
+    "lineNumber": 44,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 98,
+    "kind": "variable",
+    "name": "UPDATE",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~UPDATE",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{UPDATE}",
+    "description": null,
+    "lineNumber": 45,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 99,
+    "kind": "variable",
+    "name": "VIEW",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~VIEW",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{VIEW}",
+    "description": null,
+    "lineNumber": 46,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 100,
+    "kind": "variable",
+    "name": "READY",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~READY",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{READY}",
+    "description": null,
+    "lineNumber": 47,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 101,
+    "kind": "variable",
+    "name": "MODAL_HEADER",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~MODAL_HEADER",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{MODAL_HEADER}",
+    "description": null,
+    "lineNumber": 50,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 102,
+    "kind": "variable",
+    "name": "MODAL_BUTTON_UPDATE",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~MODAL_BUTTON_UPDATE",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{MODAL_BUTTON_UPDATE}",
+    "description": null,
+    "lineNumber": 51,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 103,
+    "kind": "variable",
+    "name": "MODAL_BUTTON_CREATE",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~MODAL_BUTTON_CREATE",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{MODAL_BUTTON_CREATE}",
+    "description": null,
+    "lineNumber": 52,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 104,
+    "kind": "variable",
+    "name": "CHOOSE_REPORT",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~CHOOSE_REPORT",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{CHOOSE_REPORT}",
+    "description": null,
+    "lineNumber": 53,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 105,
+    "kind": "variable",
+    "name": "CHOOSE_GRAPH",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~CHOOSE_GRAPH",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{CHOOSE_GRAPH}",
+    "description": null,
+    "lineNumber": 54,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 106,
+    "kind": "variable",
+    "name": "CHECKBOX_GROUP_HEADER",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~CHECKBOX_GROUP_HEADER",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{CHECKBOX_GROUP_HEADER}",
+    "description": null,
+    "lineNumber": 55,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 107,
+    "kind": "variable",
+    "name": "CHECKBOX_1",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~CHECKBOX_1",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{CHECKBOX_1}",
+    "description": null,
+    "lineNumber": 56,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 108,
+    "kind": "variable",
+    "name": "CHECKBOX_2",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~CHECKBOX_2",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{CHECKBOX_2}",
+    "description": null,
+    "lineNumber": 57,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 109,
+    "kind": "variable",
+    "name": "CHECKBOX_3",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~CHECKBOX_3",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{CHECKBOX_3}",
+    "description": null,
+    "lineNumber": 58,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 110,
+    "kind": "variable",
+    "name": "CHECKBOX_4",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~CHECKBOX_4",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{CHECKBOX_4}",
+    "description": null,
+    "lineNumber": 59,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 111,
+    "kind": "variable",
+    "name": "ERROR_MESSAGE",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~ERROR_MESSAGE",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{ERROR_MESSAGE}",
+    "description": null,
+    "lineNumber": 60,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 112,
+    "kind": "variable",
+    "name": "PREVIEW_HEADER",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~PREVIEW_HEADER",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{PREVIEW_HEADER}",
+    "description": null,
+    "lineNumber": 61,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 113,
+    "kind": "variable",
+    "name": "ID",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~ID",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{ID}",
+    "description": null,
+    "lineNumber": 64,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 114,
+    "kind": "variable",
+    "name": "GRAPH",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~GRAPH",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{GRAPH}",
+    "description": null,
+    "lineNumber": 65,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 115,
+    "kind": "variable",
+    "name": "REPORT",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~REPORT",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{REPORT}",
+    "description": null,
+    "lineNumber": 66,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 116,
+    "kind": "variable",
+    "name": "REPORT_API",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~REPORT_API",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{REPORT_API}",
+    "description": null,
+    "lineNumber": 69,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 117,
+    "kind": "variable",
+    "name": "REPORT_API_QUERY",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~REPORT_API_QUERY",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{REPORT_API_QUERY}",
+    "description": null,
+    "lineNumber": 70,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 118,
+    "kind": "variable",
+    "name": "REPORT_API_DESCRIBE",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~REPORT_API_DESCRIBE",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{REPORT_API_DESCRIBE}",
+    "description": null,
+    "lineNumber": 71,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 119,
+    "kind": "variable",
+    "name": "APEXREST_PROXY",
+    "memberof": "React_Redux/constants.jsx",
+    "static": true,
+    "longname": "React_Redux/constants.jsx~APEXREST_PROXY",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/constants.jsx",
+    "importStyle": "{APEXREST_PROXY}",
+    "description": null,
+    "lineNumber": 72,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 120,
+    "kind": "file",
+    "name": "React_Redux/containers/AddNewGraph.jsx",
+    "content": "import React from 'react'\r\nimport { connect } from 'react-redux'\r\nimport { createGraph } from '../actions'\r\n\r\nlet AddNewGraph = ({ dispatch }) => {\r\n  let input\r\n\r\n  return (\r\n    <div>\r\n      <form onSubmit={e => {\r\n        e.preventDefault()\r\n        if (!input.value.trim()) {\r\n          return\r\n        }\r\n        dispatch(createGraph(input.value))\r\n        input.value = ''\r\n      }}>\r\n        <input ref={node => {\r\n          input = node\r\n        }} />\r\n        <button type=\"submit\">\r\n          Add Todo\r\n        </button>\r\n      </form>\r\n    </div>\r\n  )\r\n}\r\nAddNewGraph = connect()(AddNewGraph)\r\n\r\nexport default AddNewGraph",
+    "static": true,
+    "longname": "React_Redux/containers/AddNewGraph.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 121,
+    "kind": "function",
+    "name": "AddNewGraph",
+    "memberof": "React_Redux/containers/AddNewGraph.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/containers/AddNewGraph.jsx~AddNewGraph",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/containers/AddNewGraph.jsx",
+    "importStyle": "AddNewGraph",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"dispatch\": *}"
+        ],
+        "defaultRaw": {
+          "dispatch": null
+        },
+        "defaultValue": "{\"dispatch\":null}"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 122,
+    "kind": "file",
+    "name": "React_Redux/containers/ViewGraphs.jsx",
+    "content": "import React from 'react'\r\nimport { connect } from 'react-redux'\r\nimport Graphs from '../components/Graphs'\r\n\r\nconst mapStateToProps = (state) => {\r\n\treturn {\r\n\t\tgraphs: state.graphs\r\n\t}\r\n}\r\n\r\nconst mapDispatchToProps = (dispatch) => {\r\n\treturn { }\r\n}\r\n\r\nconst VisibleGraphs = connect(\r\n\tmapStateToProps,\r\n\tmapDispatchToProps\r\n)(Graphs)\r\n\r\nexport default VisibleGraphs",
+    "static": true,
+    "longname": "React_Redux/containers/ViewGraphs.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 123,
+    "kind": "function",
+    "name": "mapStateToProps",
+    "memberof": "React_Redux/containers/ViewGraphs.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/containers/ViewGraphs.jsx~mapStateToProps",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/containers/ViewGraphs.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"graphs\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 124,
+    "kind": "function",
+    "name": "mapDispatchToProps",
+    "memberof": "React_Redux/containers/ViewGraphs.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/containers/ViewGraphs.jsx~mapDispatchToProps",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/containers/ViewGraphs.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 11,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "dispatch",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{}"
+      ]
+    }
+  },
+  {
+    "__docId__": 125,
+    "kind": "variable",
+    "name": "VisibleGraphs",
+    "memberof": "React_Redux/containers/ViewGraphs.jsx",
+    "static": true,
+    "longname": "React_Redux/containers/ViewGraphs.jsx~VisibleGraphs",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/containers/ViewGraphs.jsx",
+    "importStyle": "VisibleGraphs",
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 126,
+    "kind": "file",
+    "name": "React_Redux/index.jsx",
+    "content": "import React from 'react'\nimport { createStore, applyMiddleware } from 'redux'\nimport { render } from 'react-dom'\nimport { Provider } from 'react-redux'\nimport { composeWithDevTools } from 'redux-devtools-extension';\nimport thunk from 'redux-thunk'\nimport reducers from './reducers'\nimport Dashboard from './components/Dashboard'\nimport ajaxMiddleware from './reducers/ajaxMiddleware'\nimport styles from './styles/app.css'\n\nlet store = createStore(\n\treducers, \n\tcomposeWithDevTools(\n\t\tapplyMiddleware(\n\t\t\tajaxMiddleware, \n\t\t\tthunk\n\t\t)\n\t)\n)\n\nrender(\n\t<Provider store={ store }>\n\t\t<Dashboard />\n\t</Provider>,\n\tdocument.getElementById('container')\n)",
+    "static": true,
+    "longname": "React_Redux/index.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 127,
+    "kind": "variable",
+    "name": "store",
+    "memberof": "React_Redux/index.jsx",
+    "static": true,
+    "longname": "React_Redux/index.jsx~store",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/index.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 128,
+    "kind": "file",
+    "name": "React_Redux/libs/ajax.jsx",
+    "content": "import superagent from 'superagent'\r\nimport * as utils from './utils'\r\nimport * as CONSTANTS from '../constants'\r\n\r\nconst instance = utils.buildInstance()\r\n\r\nexport const postReportAPI = (endpoint, sessionId, payload) => {\r\n    return new Promise((resolve, reject) => {\r\n\t    superagent.post(CONSTANTS.REPORT_API + endpoint)\r\n\t    .send(payload)\r\n\t    .set('Authorization', 'Bearer ' + sessionId)\r\n\t    .set('Content-Type', 'application/json')\r\n\t    .end((err, res) => {\r\n            err ? reject(err) : resolve(res);\r\n        })\r\n\t})\r\n}\r\n\r\nexport const fetchReportAPI = (endpoint, sessionId) => {\r\n    return new Promise((resolve, reject) => {\r\n\t    superagent.get(CONSTANTS.REPORT_API + endpoint)\r\n\t    .set('Authorization', 'Bearer ' + sessionId)\r\n\t    .set('Content-Type', 'application/json')\r\n\t    .end((err, res) => {\r\n            err ? reject(err) : resolve(res);\r\n        })\r\n\t})\r\n}\r\n\r\nexport const postApexREST = (sessionId, params, payload) => {\r\n    return new Promise((resolve, reject) => {\r\n\t    superagent.post(CONSTANTS.APEXREST_PROXY)\r\n\t    .send(payload)\r\n        .set('SalesforceProxy-Endpoint', location.protocol + '//' + instance + '.salesforce.com/services/apexrest/RGManager' + params)\r\n        .set('Authorization', 'Bearer ' + sessionId)\r\n        .set('X-User-Agent', 'salesforce-toolkit-rest-javascript/v29.0')\r\n        .set('Content-Type', 'application/json')\r\n        .end((err, res) => {\r\n            err ? reject(err) : resolve(res);\r\n        })\r\n    })\r\n}\r\n\r\nexport const putApexREST = (sessionId, params, payload) => {\r\n    return new Promise((resolve, reject) => {\r\n\t    superagent.put(CONSTANTS.APEXREST_PROXY)\r\n\t    .send(payload)\r\n        .set('SalesforceProxy-Endpoint', location.protocol + '//' + instance + '.salesforce.com/services/apexrest/RGManager' + params)\r\n        .set('Authorization', 'Bearer ' + sessionId)\r\n        .set('X-User-Agent', 'salesforce-toolkit-rest-javascript/v29.0')\r\n        .set('Content-Type', 'application/json')\r\n        .end((err, res) => {\r\n            err ? reject(err) : resolve(res);\r\n        })\r\n    })\r\n}\r\n\r\nexport const deleteApexREST = (sessionId, params, payload) => {\r\n    return new Promise((resolve, reject) => {\r\n\t    superagent.delete(CONSTANTS.APEXREST_PROXY)\r\n\t    .send(payload)\r\n        .set('SalesforceProxy-Endpoint', location.protocol + '//' + instance + '.salesforce.com/services/apexrest/RGManager' + params)\r\n        .set('Authorization', 'Bearer ' + sessionId)\r\n        .set('X-User-Agent', 'salesforce-toolkit-rest-javascript/v29.0')\r\n        .set('Content-Type', 'application/json')\r\n        .end((err, res) => {\r\n            err ? reject(err) : resolve(res);\r\n        })\r\n    })\r\n}\r\n\r\nexport const fetchApexREST = (sessionId, params, payload) => {\r\n    return new Promise((resolve, reject) => {\r\n    \tsuperagent.get(CONSTANTS.APEXREST_PROXY)\r\n        .set('SalesforceProxy-Endpoint', location.protocol + '//' + instance + '.salesforce.com/services/apexrest/RGManager' + params)\r\n        .set('Authorization', 'Bearer ' + sessionId)\r\n        .set('X-User-Agent', 'salesforce-toolkit-rest-javascript/v29.0')\r\n        .set('Content-Type', 'application/json')\r\n        .end((err, res) => {\r\n            err ? reject(err) : resolve(res);\r\n        })\r\n    })\r\n}",
+    "static": true,
+    "longname": "React_Redux/libs/ajax.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 129,
+    "kind": "variable",
+    "name": "instance",
+    "memberof": "React_Redux/libs/ajax.jsx",
+    "static": true,
+    "longname": "React_Redux/libs/ajax.jsx~instance",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/libs/ajax.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 130,
+    "kind": "function",
+    "name": "postReportAPI",
+    "memberof": "React_Redux/libs/ajax.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/libs/ajax.jsx~postReportAPI",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/libs/ajax.jsx",
+    "importStyle": "{postReportAPI}",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "endpoint",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "sessionId",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "payload",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 131,
+    "kind": "function",
+    "name": "fetchReportAPI",
+    "memberof": "React_Redux/libs/ajax.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/libs/ajax.jsx~fetchReportAPI",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/libs/ajax.jsx",
+    "importStyle": "{fetchReportAPI}",
+    "description": null,
+    "lineNumber": 19,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "endpoint",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "sessionId",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 132,
+    "kind": "function",
+    "name": "postApexREST",
+    "memberof": "React_Redux/libs/ajax.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/libs/ajax.jsx~postApexREST",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/libs/ajax.jsx",
+    "importStyle": "{postApexREST}",
+    "description": null,
+    "lineNumber": 30,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "sessionId",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "params",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "payload",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 133,
+    "kind": "function",
+    "name": "putApexREST",
+    "memberof": "React_Redux/libs/ajax.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/libs/ajax.jsx~putApexREST",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/libs/ajax.jsx",
+    "importStyle": "{putApexREST}",
+    "description": null,
+    "lineNumber": 44,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "sessionId",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "params",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "payload",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 134,
+    "kind": "function",
+    "name": "deleteApexREST",
+    "memberof": "React_Redux/libs/ajax.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/libs/ajax.jsx~deleteApexREST",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/libs/ajax.jsx",
+    "importStyle": "{deleteApexREST}",
+    "description": null,
+    "lineNumber": 58,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "sessionId",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "params",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "payload",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 135,
+    "kind": "function",
+    "name": "fetchApexREST",
+    "memberof": "React_Redux/libs/ajax.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/libs/ajax.jsx~fetchApexREST",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/libs/ajax.jsx",
+    "importStyle": "{fetchApexREST}",
+    "description": null,
+    "lineNumber": 72,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "sessionId",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "params",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "payload",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 136,
+    "kind": "file",
+    "name": "React_Redux/libs/utils.jsx",
+    "content": "export const generateGUID = () => {\r\n\tfunction s4() {\r\n    \treturn Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);\r\n  \t}\r\n  \t\r\n  \treturn s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();\r\n}\r\n\r\nexport const buildRequest = (method, url, headers, params, payload) => {\r\n\tparams = (params === undefined) ? '' : params;\r\n\tvar request = {\r\n\t\t\tmethod  : method,\r\n\t\t\tbody    : payload,\r\n\t\t\theaders : headers\r\n\t};\r\n\r\n\tif (url.indexOf('proxy') > -1) {\r\n\t\trequest['mode'] = 'no-cors'\r\n\t}\r\n\r\n\treturn new Request(\r\n\t\turl + params, \r\n\t\trequest\r\n\t)\r\n}\r\n\r\nexport const buildInstance = () => {\r\n\tvar elements = location.hostname.split(\".\"),\r\n\t\tinstance = '';\r\n\r\n\tif (elements.length === 4 && elements[1] === 'my') {\r\n        instance = elements[0] + '.' + elements[1];\r\n    } else if (elements.length === 3) {\r\n        instance = elements[0];\r\n    } else {\r\n        instance = elements[1];\r\n    }\r\n\r\n    return instance;\r\n}\r\n\r\nexport const buildParams = (params) => {\r\n\tif (params) {\r\n\t\tvar urlPath \t= '',\r\n\t\t\tparamLength = Object.keys(params).length,\r\n\t\t\tindex \t\t= 0\r\n\t\t\r\n\t\tfor (var property in params) {\r\n\t\t\tif (params.hasOwnProperty(property)) {\r\n\t\t\t\tindex++\r\n\t\t\t\turlPath += property + '=' + params[property]\r\n\t\t\t\turlPath += (index < paramLength) ? '&' : ''\r\n\t\t\t}\r\n\t\t};\r\n\r\n\t\treturn (urlPath.length > 0) ? ('?' + urlPath) : ''\r\n\t} else {\r\n\t\treturn ''\r\n\t}\r\n}",
+    "static": true,
+    "longname": "React_Redux/libs/utils.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 137,
+    "kind": "function",
+    "name": "generateGUID",
+    "memberof": "React_Redux/libs/utils.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/libs/utils.jsx~generateGUID",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/libs/utils.jsx",
+    "importStyle": "{generateGUID}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 138,
+    "kind": "function",
+    "name": "buildRequest",
+    "memberof": "React_Redux/libs/utils.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/libs/utils.jsx~buildRequest",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/libs/utils.jsx",
+    "importStyle": "{buildRequest}",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "method",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "url",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "headers",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "params",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "payload",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 139,
+    "kind": "function",
+    "name": "buildInstance",
+    "memberof": "React_Redux/libs/utils.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/libs/utils.jsx~buildInstance",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/libs/utils.jsx",
+    "importStyle": "{buildInstance}",
+    "description": null,
+    "lineNumber": 27,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 140,
+    "kind": "function",
+    "name": "buildParams",
+    "memberof": "React_Redux/libs/utils.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/libs/utils.jsx~buildParams",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/libs/utils.jsx",
+    "importStyle": "{buildParams}",
+    "description": null,
+    "lineNumber": 42,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "params",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 141,
+    "kind": "file",
+    "name": "React_Redux/node_modules/babel/test/fixtures/babel-node/require/in-files/not_node_modules.jsx",
+    "content": "/*\nThe purpose of this file is to test that the node_modules check in the require\nhook doesn't mistakenly exclude something like \"not_node_modules\". To pass, this\nfile merely needs to be transpiled. The transpiled code won't, and doesn't need\nto, execute without error. It won't execute because React will be undefined.\n*/\ntry {\n  <Some jsx=\"element\" />;\n}\ncatch (e) {}\n",
+    "static": true,
+    "longname": "React_Redux/node_modules/babel/test/fixtures/babel-node/require/in-files/not_node_modules.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 142,
+    "kind": "file",
+    "name": "React_Redux/reducers/ajaxMiddleware.jsx",
+    "content": "import * as ajax from '../libs/ajax'\r\nimport * as utils from '../libs/utils'\r\nimport * as CONSTANTS from '../constants'\r\nimport * as graphActions from '../actions'\r\n\r\nconst ajaxMiddleware = store => next => action => {\r\n\tnext(action)\r\n\r\n    let endpoint = '',\r\n    \tparams   = utils.buildParams(action.params)\r\n\r\n\tswitch(action.type) {\r\n\t\tcase CONSTANTS.CREATE_GRAPH:\r\n\t\t\treturn ajax.postApexREST(action.sessionId, params, { \r\n\t\t\t\t\t'reportId' : action.reportId, \r\n\t\t\t\t\t'graphId'  : action.graphId\r\n\t\t\t\t}).then(function(response) {\r\n\t\t\t    \tnext(\r\n\t\t\t    \t\tparseResponse(\r\n\t\t\t    \t\t\tresponse, \r\n\t\t\t    \t\t\tCONSTANTS.CREATE_GRAPH_ERROR, \r\n\t\t\t    \t\t\tCONSTANTS.CREATE_GRAPH_COMPLETE\r\n\t\t\t    \t\t)\r\n\t\t\t    \t)\r\n\t\t\t\t})\r\n\r\n\t\t\tbreak\r\n\t\tcase CONSTANTS.UPDATE_GRAPH:\r\n\t\t\treturn ajax.putApexREST(action.sessionId, params, { \r\n\t\t\t\t\t'id'       : action.id ,\r\n\t\t\t\t\t'reportId' : action.reportId,\r\n\t\t\t\t\t'graphId'  : action.graphId\r\n\t\t\t\t}).then(function(response) {\r\n\t\t\t    \tnext(\r\n\t\t\t    \t\tparseResponse(\r\n\t\t\t\t    \t\tresponse, \r\n\t\t\t\t    \t\tCONSTANTS.UPDATE_GRAPH_ERROR, \r\n\t\t\t\t    \t\tCONSTANTS.UPDATE_GRAPH_COMPLETE\r\n\t\t\t\t    \t)\r\n\t\t\t    \t)\r\n\t\t\t\t})\r\n\r\n\t\t\tbreak\r\n\t\tcase CONSTANTS.LOAD_GRAPHS:\r\n\t\t\treturn ajax.fetchApexREST(action.sessionId, params)\r\n\t\t\t\t.then(function(response) {\r\n\t\t\t    \tnext(\r\n\t\t\t    \t\tparseResponse(\r\n\t\t\t\t    \t\tresponse, \r\n\t\t\t\t    \t\tCONSTANTS.LOAD_GRAPHS_ERROR, \r\n\t\t\t\t    \t\tCONSTANTS.LOAD_GRAPHS_COMPLETE\r\n\t\t\t\t    \t)\r\n\t\t\t    \t)\r\n\t\t\t\t})\r\n\t\t\t\r\n\t\t\tbreak\r\n\t\tcase CONSTANTS.REFRESH_GRAPH:\r\n\t\t\tdebugger\r\n\t\t\treturn ajax.fetchApexREST(action.sessionId, params)\r\n\t\t\t\t.then(function(response) {\r\n\t\t\t    \tnext(\r\n\t\t\t    \t\tparseResponse(\r\n\t\t\t\t    \t\tresponse, \r\n\t\t\t\t    \t\tCONSTANTS.REFRESH_GRAPH_ERROR, \r\n\t\t\t\t    \t\tCONSTANTS.REFRESH_GRAPH_COMPLETE\r\n\t\t\t\t    \t)\r\n\t\t\t    \t)\r\n\t\t\t\t})\r\n\t\t\t\r\n\t\t\tbreak\r\n\t\tcase CONSTANTS.LOAD_GRAPH_TYPES:\r\n\t\t\treturn ajax.fetchApexREST(action.sessionId, params)\r\n\t\t\t\t.then(function(response) {\r\n\t\t\t    \tnext(\r\n\t\t\t    \t\tparseResponse(\r\n\t\t\t\t    \t\tresponse, \r\n\t\t\t\t    \t\tCONSTANTS.LOAD_GRAPH_TYPES_ERROR, \r\n\t\t\t\t    \t\tCONSTANTS.LOAD_GRAPH_TYPES_COMPLETE\r\n\t\t\t\t    \t)\r\n\t\t\t    \t)\r\n\t\t\t\t})\r\n\t\t\t\r\n\t\t\tbreak\r\n\t\tcase CONSTANTS.DELETE_GRAPH:\r\n\t\t\treturn ajax.deleteApexREST(action.sessionId, params)\r\n\t\t\t\t.then(function(response) {\r\n\t\t\t    \tnext(\r\n\t\t\t    \t\tparseResponse(\r\n\t\t\t\t    \t\tresponse, \r\n\t\t\t\t    \t\tCONSTANTS.DELETE_GRAPH_ERROR, \r\n\t\t\t\t    \t\tCONSTANTS.DELETE_GRAPH_COMPLETE\r\n\t\t\t\t    \t)\r\n\t\t\t    \t)\r\n\t\t\t\t})\r\n\r\n\t\t\tbreak\r\n\t\tdefault:\r\n\t\t\tbreak\r\n\t}\r\n\r\n\tswitch(action.type) {\r\n\t\tcase CONSTANTS.LOAD_REPORTS:\r\n\t\t\treturn ajax.fetchReportAPI(endpoint, action.sessionId)\r\n\t\t\t\t.then(function(response) {\r\n\t\t\t    \tnext(\r\n\t\t\t    \t\tparseResponse(\r\n\t\t\t\t    \t\tresponse, \r\n\t\t\t\t    \t\tCONSTANTS.LOAD_REPORTS_ERROR, \r\n\t\t\t\t    \t\tCONSTANTS.LOAD_REPORTS_COMPLETE\r\n\t\t\t\t    \t)\r\n\t\t\t    \t)\r\n\t\t\t\t})\r\n\r\n\t\t\tbreak\r\n\t\tcase CONSTANTS.RETRIEVE_REPORT_DATA:\r\n\t\t\tendpoint = CONSTANTS.REPORT_API_QUERY\r\n\r\n\t\t\treturn ajax.postReportAPI(endpoint, action.sessionId, { \r\n\t\t\t\t\treportMetadata : action.metadata \r\n\t\t\t\t}).then(function(response) {\r\n\t\t\t\t\tlet actionObj = parseResponse(\r\n\t\t\t    \t\tresponse, \r\n\t\t\t    \t\tCONSTANTS.RETRIEVE_REPORT_DATA_ERROR, \r\n\t\t\t    \t\tCONSTANTS.RETRIEVE_REPORT_DATA_COMPLETE\r\n\t\t\t    \t)\r\n\r\n\t\t\t    \tactionObj.reportId = action.reportId\r\n\r\n\t\t\t    \tnext(actionObj)\r\n\t\t\t\t})\r\n\r\n\t\t\tbreak\t\t\r\n\t\tcase CONSTANTS.RETRIEVE_REPORT_METADATA:\r\n\t\t\tendpoint = action.reportId + CONSTANTS.REPORT_API_DESCRIBE\r\n\r\n\t\t\treturn ajax.fetchReportAPI(endpoint, action.sessionId)\r\n\t\t\t\t.then(function(response) {\r\n\t\t\t\t\tlet actionObj = parseResponse(\r\n\t\t\t    \t\tresponse, \r\n\t\t\t    \t\tCONSTANTS.RETRIEVE_REPORT_METADATA_ERROR, \r\n\t\t\t    \t\tCONSTANTS.RETRIEVE_REPORT_METADATA_COMPLETE\r\n\t\t\t    \t)\r\n\r\n\t\t\t    \tactionObj.reportId = action.reportId\r\n\r\n\t\t\t    \tnext(actionObj)\r\n\t\t\t\t})\r\n\r\n\t\t\tbreak\r\n\t\tdefault:\r\n\t\t\tbreak\r\n\t}\r\n}\r\n\r\nconst parseResponse = (response, nextErrorAction, nextActionToTake) => {\r\n\tconst data \t\t = JSON.parse(response.text)\r\n\tlet   nextAction = nextActionToTake\r\n\r\n\tif (response.status !== 200) {\r\n\t\tnextAction = nextErrorAction\r\n\t}\r\n\t\r\n\tconsole.log('Next Action:: ' + nextAction)\r\n\tconsole.log(data);\r\n\r\n\treturn {\r\n\t\ttype : nextAction,\r\n\t\tdata\r\n\t}\r\n}\r\n\r\nexport default ajaxMiddleware",
+    "static": true,
+    "longname": "React_Redux/reducers/ajaxMiddleware.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 143,
+    "kind": "function",
+    "name": "parseResponse",
+    "memberof": "React_Redux/reducers/ajaxMiddleware.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/reducers/ajaxMiddleware.jsx~parseResponse",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/reducers/ajaxMiddleware.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 155,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "response",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "nextErrorAction",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "nextActionToTake",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"type\": *, \"data\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 144,
+    "kind": "function",
+    "name": "ajaxMiddleware",
+    "memberof": "React_Redux/reducers/ajaxMiddleware.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/reducers/ajaxMiddleware.jsx~ajaxMiddleware",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/reducers/ajaxMiddleware.jsx",
+    "importStyle": "ajaxMiddleware",
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "store",
+        "types": [
+          "*"
+        ]
+      }
+    ]
+  },
+  {
+    "__docId__": 145,
+    "kind": "file",
+    "name": "React_Redux/reducers/graphs.jsx",
+    "content": "import * as CONSTANTS from '../constants'\r\n\r\nconst graphs = (state = [], action) => {\r\n\r\n\tswitch (action.type) {\r\n\t\tcase CONSTANTS.LOAD_GRAPHS_COMPLETE:\r\n\t\t\treturn action.data\r\n\t\tcase CONSTANTS.REFRESH_GRAPH_COMPLETE:\r\n\t\t\treturn state.map((graph) => updateGraph(graph, action))\r\n\t\tdefault:\r\n\t\t\treturn state\r\n\t}\r\n}\r\n\r\nconst updateGraph = (state = {}, action) => {\r\n\tconst data = action.data\r\n\r\n\tif (data && data.length > 0) {\r\n\t\tconst graph = data[0]\r\n\r\n\t\tif (graph.Id == state.Id) {\r\n\t\t\treturn graph\r\n\t\t}\r\n\t}\r\n\r\n\treturn state\r\n}\r\n\r\nexport default graphs",
+    "static": true,
+    "longname": "React_Redux/reducers/graphs.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 146,
+    "kind": "function",
+    "name": "updateGraph",
+    "memberof": "React_Redux/reducers/graphs.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/reducers/graphs.jsx~updateGraph",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/reducers/graphs.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "optional": true,
+        "types": [
+          "{}"
+        ],
+        "defaultRaw": {},
+        "defaultValue": "{}"
+      },
+      {
+        "name": "action",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 147,
+    "kind": "function",
+    "name": "graphs",
+    "memberof": "React_Redux/reducers/graphs.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/reducers/graphs.jsx~graphs",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/reducers/graphs.jsx",
+    "importStyle": "graphs",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "optional": true,
+        "types": [
+          "*[]"
+        ],
+        "defaultRaw": [],
+        "defaultValue": "[]"
+      },
+      {
+        "name": "action",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 148,
+    "kind": "file",
+    "name": "React_Redux/reducers/graphTypes.jsx",
+    "content": "import * as CONSTANTS from '../constants'\r\n\r\nconst graphTypes = (state = [], action) => {\r\n\tswitch (action.type) {\r\n\t\tcase CONSTANTS.LOAD_GRAPH_TYPES_COMPLETE:\r\n\t\t\treturn action.data\r\n\t\tdefault:\r\n\t\t\treturn state\r\n\t}\r\n}\r\n\r\nexport default graphTypes",
+    "static": true,
+    "longname": "React_Redux/reducers/graphTypes.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 149,
+    "kind": "function",
+    "name": "graphTypes",
+    "memberof": "React_Redux/reducers/graphTypes.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/reducers/graphTypes.jsx~graphTypes",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/reducers/graphTypes.jsx",
+    "importStyle": "graphTypes",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "optional": true,
+        "types": [
+          "*[]"
+        ],
+        "defaultRaw": [],
+        "defaultValue": "[]"
+      },
+      {
+        "name": "action",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 150,
+    "kind": "file",
+    "name": "React_Redux/reducers/index.jsx",
+    "content": "import { combineReducers } from 'redux'\r\nimport reports from './reports'\r\nimport graphs from './graphs'\r\nimport graphTypes from './graphTypes'\r\nimport mode from './mode'\r\nimport selectedGraph from './selectedGraph'\r\nimport session from './session'\r\n\r\nconst reducers = combineReducers({\r\n\treports,\r\n\tgraphs,\r\n\tgraphTypes,\r\n\tmode,\r\n\tselectedGraph,\r\n\tsession\r\n})\r\n\r\nexport default reducers",
+    "static": true,
+    "longname": "React_Redux/reducers/index.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 151,
+    "kind": "variable",
+    "name": "reducers",
+    "memberof": "React_Redux/reducers/index.jsx",
+    "static": true,
+    "longname": "React_Redux/reducers/index.jsx~reducers",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/reducers/index.jsx",
+    "importStyle": "reducers",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 152,
+    "kind": "file",
+    "name": "React_Redux/reducers/mode.jsx",
+    "content": "import Alert from 'react-s-alert'\r\nimport * as CONSTANTS from '../constants'\r\n\r\n\r\nconst mode = (state = CONSTANTS.LOAD_GRAPHS, action) => {\r\n\tswitch (action.type) {\r\n\t\tcase CONSTANTS.RETRIEVE_REPORT_DATA:\r\n\t\t\treturn CONSTANTS.LOADING\r\n\t\tcase CONSTANTS.RETRIEVE_REPORT_METADATA:\r\n\t\t\treturn CONSTANTS.LOADING\r\n\t\tcase CONSTANTS.RETRIEVE_REPORT_DATA:\r\n\t\t\treturn CONSTANTS.LOADING\r\n\r\n\r\n\t\tcase CONSTANTS.DELETE_GRAPH_ERROR:\r\n\t\t\tAlert.error('Error Deleting Graph', {\r\n\t            position : 'top-right',\r\n\t            effect   : 'scale',\r\n\t            beep     : false,\r\n\t            timeout  : 5000,\r\n\t            offset   : 0\r\n        \t})\r\n\r\n\t\t\treturn CONSTANTS.LOADING\r\n\t\tcase CONSTANTS.UPDATE_GRAPH_ERROR:\r\n\t\t\tAlert.error('Error Updating Graph', {\r\n\t            position : 'top-right',\r\n\t            effect   : 'scale',\r\n\t            beep     : false,\r\n\t            timeout  : 5000,\r\n\t            offset   : 0\r\n        \t})\r\n\r\n\t\t\treturn CONSTANTS.LOADING\r\n\t\tcase CONSTANTS.REFRESH_GRAPH_ERROR:\r\n\t\t\tAlert.error('Error Refresing Graph', {\r\n\t            position : 'top-right',\r\n\t            effect   : 'scale',\r\n\t            beep     : false,\r\n\t            timeout  : 5000,\r\n\t            offset   : 0\r\n        \t})\r\n\r\n\t\t\treturn CONSTANTS.LOADING\r\n\t\tcase CONSTANTS.RETRIEVE_REPORT_DATA_ERROR:\r\n\t\t\tAlert.error('Error Retrieving Report Data', {\r\n\t            position : 'top-right',\r\n\t            effect   : 'scale',\r\n\t            beep     : false,\r\n\t            timeout  : 5000,\r\n\t            offset   : 0\r\n        \t})\r\n\r\n\t\t\treturn CONSTANTS.LOADING\r\n\r\n\r\n\t\tcase CONSTANTS.RETRIEVE_REPORT_DATA_COMPLETE:\r\n\t\t\treturn CONSTANTS.READY\r\n\t\tcase CONSTANTS.RETRIEVE_REPORT_METADATA_COMPLETE:\r\n\t\t\treturn CONSTANTS.READY\r\n\t\tcase CONSTANTS.REFRESH_GRAPH_COMPLETE:\r\n\t\t\tAlert.success('Graph Refreshed Successfully', {\r\n\t            position : 'top-right',\r\n\t            effect   : 'scale',\r\n\t            beep     : false,\r\n\t            timeout  : 5000,\r\n\t            offset   : 0\r\n        \t})\r\n\r\n\t\t\treturn CONSTANTS.READY\r\n\t\tcase CONSTANTS.LOAD_GRAPHS_COMPLETE:\r\n\t\t\treturn CONSTANTS.READY\r\n\r\n\r\n\t\tcase CONSTANTS.NEW_GRAPH:\r\n\t\t\treturn CONSTANTS.NEW\r\n\r\n\r\n\t\tcase CONSTANTS.EDIT_GRAPH:\r\n\t\t\treturn CONSTANTS.EDIT\r\n\r\n\r\n\t\tcase CONSTANTS.DELETE_GRAPH:\r\n\t\t\tAlert.success('Graph Successfully Deleted', {\r\n\t            position : 'top-right',\r\n\t            effect   : 'scale',\r\n\t            beep     : false,\r\n\t            timeout  : 5000,\r\n\t            offset   : 0\r\n        \t})\r\n\r\n\t\t\treturn CONSTANTS.DELETE\r\n\r\n\r\n\t\tcase CONSTANTS.CANCEL_EDITING:\r\n\t\t\treturn CONSTANTS.VIEW\r\n\t\tcase CONSTANTS.UPDATE_GRAPH_COMPLETE:\r\n\t\t\tAlert.success('Graph Successfully Updated', {\r\n\t            position : 'top-right',\r\n\t            effect   : 'scale',\r\n\t            beep     : false,\r\n\t            timeout  : 5000,\r\n\t            offset   : 0\r\n        \t})\r\n\r\n\t\t\treturn CONSTANTS.VIEW\r\n\t\tcase CONSTANTS.CREATE_GRAPH_COMPLETE:\r\n\t\t\tAlert.success('Graph Successfully Created', {\r\n\t            position : 'top-right',\r\n\t            effect   : 'scale',\r\n\t            beep     : false,\r\n\t            timeout  : 5000,\r\n\t            offset   : 0\r\n        \t})\r\n\r\n\t\t\treturn CONSTANTS.VIEW\r\n\t\tdefault:\r\n\t\t\treturn state\r\n\t}\r\n}\r\n\r\nexport default mode",
+    "static": true,
+    "longname": "React_Redux/reducers/mode.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 153,
+    "kind": "function",
+    "name": "mode",
+    "memberof": "React_Redux/reducers/mode.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/reducers/mode.jsx~mode",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/reducers/mode.jsx",
+    "importStyle": "mode",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "optional": true,
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "action",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 154,
+    "kind": "file",
+    "name": "React_Redux/reducers/session.jsx",
+    "content": "import * as CONSTANTS from '../constants'\r\n\r\nconst sessionId = document.getElementById('container').getAttribute('sessionId')\r\n\r\nconst mode = (state = sessionId, action) => {\r\n\treturn state\r\n}\r\n\r\nexport default mode",
+    "static": true,
+    "longname": "React_Redux/reducers/session.jsx",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 155,
+    "kind": "variable",
+    "name": "sessionId",
+    "memberof": "React_Redux/reducers/session.jsx",
+    "static": true,
+    "longname": "React_Redux/reducers/session.jsx~sessionId",
+    "access": null,
+    "export": false,
+    "importPath": "Documentor/React_Redux/reducers/session.jsx",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 156,
+    "kind": "function",
+    "name": "mode",
+    "memberof": "React_Redux/reducers/session.jsx",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "React_Redux/reducers/session.jsx~mode",
+    "access": null,
+    "export": true,
+    "importPath": "Documentor/React_Redux/reducers/session.jsx",
+    "importStyle": "mode",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "optional": true,
+        "types": [
+          "*"
+        ],
+        "defaultRaw": "sessionId",
+        "defaultValue": "sessionId"
+      },
+      {
+        "name": "action",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 158,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Infinity",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 159,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~NaN",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 160,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~undefined",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 161,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~null",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 162,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 163,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 164,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 165,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 166,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 167,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 168,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Symbol",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 169,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Error",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 170,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~EvalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 171,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~InternalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 172,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RangeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 173,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ReferenceError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 174,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~SyntaxError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 175,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~TypeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 176,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~URIError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 177,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 178,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 179,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Date",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 180,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~String",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 181,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~string",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 182,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RegExp",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 183,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 184,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 185,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 186,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 187,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 188,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 189,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 190,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 191,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 192,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float64Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 193,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Map",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 194,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Set",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 195,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakMap",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 196,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakSet",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 197,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 198,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~DataView",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 199,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~JSON",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 200,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Promise",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 201,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Generator",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 202,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 203,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Reflect",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 204,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Proxy",
+    "access": null,
+    "description": "",
+    "lineNumber": 193,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 206,
+    "kind": "external",
+    "name": "CanvasRenderingContext2D",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 207,
+    "kind": "external",
+    "name": "DocumentFragment",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~DocumentFragment",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 208,
+    "kind": "external",
+    "name": "Element",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Element",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~Element",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 209,
+    "kind": "external",
+    "name": "Event",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Event",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~Event",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 210,
+    "kind": "external",
+    "name": "Node",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Node",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~Node",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 211,
+    "kind": "external",
+    "name": "NodeList",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/NodeList",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~NodeList",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 212,
+    "kind": "external",
+    "name": "XMLHttpRequest",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 213,
+    "kind": "external",
+    "name": "AudioContext",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/AudioContext",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~AudioContext",
+    "access": null,
+    "description": "",
+    "lineNumber": 34,
+    "builtinExternal": true
+  }
+]
