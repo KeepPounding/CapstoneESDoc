@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">React_Redux/components/Graph.jsx | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cancelEditing">cancelEditing</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createGraph">createGraph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deleteGraph">deleteGraph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-editGraph">editGraph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-newGraph">newGraph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-refreshDashboard">refreshDashboard</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-refreshGraph">refreshGraph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-retrieveGraphTypes">retrieveGraphTypes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-retrieveGraphs">retrieveGraphs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-retrieveReportData">retrieveReportData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-retrieveReportMetaData">retrieveReportMetaData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-retrieveReports">retrieveReports</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-updateGraph">updateGraph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-updateGraphId">updateGraphId</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-updateReportId">updateReportId</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-APEXREST_PROXY">APEXREST_PROXY</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CANCEL">CANCEL</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CANCEL_EDITING">CANCEL_EDITING</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CHECKBOX_1">CHECKBOX_1</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CHECKBOX_2">CHECKBOX_2</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CHECKBOX_3">CHECKBOX_3</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CHECKBOX_4">CHECKBOX_4</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CHECKBOX_GROUP_HEADER">CHECKBOX_GROUP_HEADER</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CHOOSE_GRAPH">CHOOSE_GRAPH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CHOOSE_REPORT">CHOOSE_REPORT</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CREATE_GRAPH">CREATE_GRAPH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CREATE_GRAPH_COMPLETE">CREATE_GRAPH_COMPLETE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CREATE_GRAPH_ERROR">CREATE_GRAPH_ERROR</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DELETE">DELETE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DELETE_GRAPH">DELETE_GRAPH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DELETE_GRAPH_COMPLETE">DELETE_GRAPH_COMPLETE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DELETE_GRAPH_ERROR">DELETE_GRAPH_ERROR</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EDIT">EDIT</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EDIT_GRAPH">EDIT_GRAPH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ERROR_MESSAGE">ERROR_MESSAGE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-GRAPH">GRAPH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ID">ID</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LOADING">LOADING</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LOAD_GRAPHS">LOAD_GRAPHS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LOAD_GRAPHS_COMPLETE">LOAD_GRAPHS_COMPLETE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LOAD_GRAPHS_ERROR">LOAD_GRAPHS_ERROR</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LOAD_GRAPH_TYPES">LOAD_GRAPH_TYPES</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LOAD_GRAPH_TYPES_COMPLETE">LOAD_GRAPH_TYPES_COMPLETE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LOAD_GRAPH_TYPES_ERROR">LOAD_GRAPH_TYPES_ERROR</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LOAD_REPORTS">LOAD_REPORTS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LOAD_REPORTS_COMPLETE">LOAD_REPORTS_COMPLETE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LOAD_REPORTS_ERROR">LOAD_REPORTS_ERROR</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MODAL_BUTTON_CREATE">MODAL_BUTTON_CREATE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MODAL_BUTTON_UPDATE">MODAL_BUTTON_UPDATE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MODAL_HEADER">MODAL_HEADER</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NEW">NEW</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NEW_GRAPH">NEW_GRAPH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PARAM_NAME_ACTION">PARAM_NAME_ACTION</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PARAM_VALUE_GRAPHTYPE">PARAM_VALUE_GRAPHTYPE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PARAM_VALUE_RETRIEVE_GRAPH">PARAM_VALUE_RETRIEVE_GRAPH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PARAM_VALUE_RETRIEVE_GRAPHS">PARAM_VALUE_RETRIEVE_GRAPHS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PREVIEW_HEADER">PREVIEW_HEADER</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-READY">READY</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-REFRESH_GRAPH">REFRESH_GRAPH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-REFRESH_GRAPH_COMPLETE">REFRESH_GRAPH_COMPLETE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-REFRESH_GRAPH_ERROR">REFRESH_GRAPH_ERROR</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-REPORT">REPORT</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-REPORT_API">REPORT_API</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-REPORT_API_DESCRIBE">REPORT_API_DESCRIBE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-REPORT_API_QUERY">REPORT_API_QUERY</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RETRIEVE_GRAPHS">RETRIEVE_GRAPHS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RETRIEVE_REPORT_DATA">RETRIEVE_REPORT_DATA</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RETRIEVE_REPORT_DATA_COMPLETE">RETRIEVE_REPORT_DATA_COMPLETE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RETRIEVE_REPORT_DATA_ERROR">RETRIEVE_REPORT_DATA_ERROR</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RETRIEVE_REPORT_METADATA">RETRIEVE_REPORT_METADATA</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RETRIEVE_REPORT_METADATA_COMPLETE">RETRIEVE_REPORT_METADATA_COMPLETE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RETRIEVE_REPORT_METADATA_ERROR">RETRIEVE_REPORT_METADATA_ERROR</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UPDATE">UPDATE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UPDATE_GRAPH">UPDATE_GRAPH</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UPDATE_GRAPH_COMPLETE">UPDATE_GRAPH_COMPLETE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UPDATE_GRAPH_ERROR">UPDATE_GRAPH_ERROR</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UPDATE_GRAPH_PREVIEW">UPDATE_GRAPH_PREVIEW</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-UPDATE_REPORT_PREVIEW">UPDATE_REPORT_PREVIEW</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-VIEW">VIEW</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">components</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildGraphs">buildGraphs</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">containers</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-AddNewGraph">AddNewGraph</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-VisibleGraphs">VisibleGraphs</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">libs</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deleteApexREST">deleteApexREST</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fetchApexREST">fetchApexREST</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fetchReportAPI">fetchReportAPI</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-postApexREST">postApexREST</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-postReportAPI">postReportAPI</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-putApexREST">putApexREST</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildInstance">buildInstance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildParams">buildParams</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-buildRequest">buildRequest</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateGUID">generateGUID</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">reducers</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ajaxMiddleware">ajaxMiddleware</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-graphTypes">graphTypes</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-graphs">graphs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mode">mode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mode">mode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-reducers">reducers</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">React_Redux/components/Graph.jsx</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import React, { Component, PropTypes } from &apos;react&apos;
+import { bindActionCreators } from &apos;redux&apos;
+import FusionCharts from &apos;fusioncharts&apos;
+import charts from &apos;fusioncharts/fusioncharts.charts&apos;
+import reactFusionCharts from &apos;react-fusioncharts&apos;
+import { connect } from &apos;react-redux&apos;
+import * as graphActions from &apos;../actions&apos;
+import * as CONSTANTS from &apos;../constants&apos;
+
+charts(FusionCharts)
+
+class Graph extends Component {
+
+	componentWillMount() {
+		let self = this;
+		const mode		= this.props.mode,
+			  sessionId = this.props.sessionId,
+			  report    = (this.props.report) ? this.props.report : null,
+			  reportId  = (report) ? report.id : null
+
+		if (reportId) {
+			if (report &amp;&amp; !report.metadata) {
+				self.props.actions.retrieveReportMetaData(sessionId, reportId)
+			}
+		}
+	}
+
+	componentDidMount() {
+		const graphId     = (this.props.id) ? this.props.id : this.props.graph.Id,
+			  graphTypeId = this.props.graph.Graph__c
+		let data = (this.props.report &amp;&amp; this.props.report.data) ? this.props.report.data : []
+
+		if (graphId &amp;&amp; data) {
+			this.state = {
+				chart : new FusionCharts({
+					renderAt   : graphId,
+				    type       : graphTypeId,
+				    width      : &apos;500&apos;,
+				    height     : &apos;300&apos;,
+				    dataFormat : &apos;json&apos;,
+				    dataSource : {
+				    	&quot;data&quot; : data
+				    }
+				}).render()
+			}
+		}
+	}
+
+	componentWillReceiveProps(nextProps) {
+		let reportId, sessionId, metadata, data
+		const mode		= this.props.mode, 
+			  report    = (nextProps &amp;&amp; nextProps.report) ? nextProps.report : this.props.report,
+			  graph     = (nextProps &amp;&amp; nextProps.graph) ? nextProps.graph : this.props.graph,
+			  chart     = this.state.chart,
+			  actions   = this.props.actions,
+			  oldGraph  = this.props.graph.Graph__c,
+			  newGraph  = nextProps.graph.Graph__c,
+			  oldReport = this.props.graph.Report__c,
+			  newReport = nextProps.graph.Report__c
+
+		sessionId = this.props.sessionId
+		reportId  = (newReport) ? newReport : ((oldReport) ? oldReport : &apos;&apos;)
+
+		if (report &amp;&amp; !report.metadata &amp;&amp; mode == CONSTANTS.READY) {
+			metadata = (report.metadata) ? report.metadata : this.props.actions.retrieveReportMetaData(sessionId, reportId)
+		} else if (report.metadata) {
+			metadata = report.metadata
+		}
+
+		if (report &amp;&amp; report.metadata &amp;&amp; !report.data &amp;&amp; mode == CONSTANTS.READY) {
+			data = (report.data) ? report.data : this.props.actions.retrieveReportData(sessionId, reportId, report.metadata)
+		} else if (report.data) {
+			data = report.data
+		}
+
+		if (chart &amp;&amp; data) {
+			const existingData = chart.getJSONData()
+
+			if (existingData.data &amp;&amp; existingData.data.length != data.length) {
+				chart.setChartData({ data : data })
+				chart.render()
+			}
+		}
+
+		if (oldGraph != newGraph) {
+			chart.chartType(newGraph)
+			chart.render()
+		}
+	}
+
+	render() {
+		const graphId = (this.props.id) ? this.props.id : this.props.graph.Id
+
+		return (
+			&lt;div id={ graphId } /&gt;
+		);
+	}
+}
+
+Graph.propTypes = {
+	graphs    : PropTypes.array.isRequired,
+	reports   : PropTypes.array.isRequired,
+	actions   : PropTypes.object.isRequired,
+	sessionId : PropTypes.string.isRequired,
+	mode      : PropTypes.string.isRequired
+};
+
+function mapStateToProps(state) {
+  	return {
+    	graphs    : state.graphs,
+    	reports   : state.reports,
+    	mode      : state.mode,
+    	sessionId : state.session
+	};
+}
+
+function mapDispatchToProps(dispatch) {
+	return {
+		actions : bindActionCreators(graphActions, dispatch)
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Graph);</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

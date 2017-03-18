@@ -1,0 +1,179 @@
+{
+  "coverage": "4.08%",
+  "expectCount": 98,
+  "actualCount": 4,
+  "files": {
+    "React_Redux/constants.jsx": {
+      "expectCount": 64,
+      "actualCount": 0,
+      "undocumentLines": [
+        72,
+        44,
+        7,
+        56,
+        57,
+        58,
+        59,
+        55,
+        54,
+        53,
+        2,
+        4,
+        3,
+        43,
+        8,
+        9,
+        10,
+        42,
+        6,
+        60,
+        65,
+        64,
+        40,
+        29,
+        31,
+        30,
+        32,
+        34,
+        33,
+        26,
+        28,
+        27,
+        52,
+        51,
+        50,
+        41,
+        5,
+        35,
+        38,
+        36,
+        37,
+        61,
+        47,
+        11,
+        13,
+        12,
+        66,
+        69,
+        71,
+        70,
+        19,
+        20,
+        22,
+        21,
+        23,
+        25,
+        24,
+        45,
+        14,
+        16,
+        15,
+        17,
+        18,
+        46
+      ]
+    },
+    "React_Redux/containers/AddNewGraph.jsx": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        5
+      ]
+    },
+    "React_Redux/containers/ViewGraphs.jsx": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        15
+      ]
+    },
+    "React_Redux/reducers/ajaxMiddleware.jsx": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        6
+      ]
+    },
+    "React_Redux/components/Dashboard.jsx": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        13
+      ]
+    },
+    "React_Redux/libs/utils.jsx": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        27,
+        42,
+        9,
+        1
+      ]
+    },
+    "React_Redux/actions.jsx": {
+      "expectCount": 15,
+      "actualCount": 4,
+      "undocumentLines": [
+        104,
+        40,
+        50,
+        98,
+        87,
+        70,
+        120,
+        80,
+        14,
+        24,
+        32
+      ]
+    },
+    "React_Redux/libs/ajax.jsx": {
+      "expectCount": 6,
+      "actualCount": 0,
+      "undocumentLines": [
+        58,
+        72,
+        19,
+        30,
+        7,
+        44
+      ]
+    },
+    "React_Redux/reducers/graphTypes.jsx": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "React_Redux/reducers/graphs.jsx": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "React_Redux/reducers/mode.jsx": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        5
+      ]
+    },
+    "React_Redux/reducers/session.jsx": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        5
+      ]
+    },
+    "React_Redux/reducers/index.jsx": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        9
+      ]
+    }
+  }
+}
